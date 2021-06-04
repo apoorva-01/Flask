@@ -98,7 +98,9 @@ i {
   transform: scale(1);
   width: 100%;
 }
-
+.table{
+  box-shadow: 5px 5px 10px black;
+}
 /* Tab content */
 p {
   color: #fff;
