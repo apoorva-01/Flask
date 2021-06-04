@@ -60,10 +60,12 @@
                 <p>{{comment_upvote}} Upvotes</p>
             </div>
 
+            {% if current_user.is_authenticated %}
             {% if current_user.has_liked_comment(comment) %}
             <a href="{{ url_for('main.like_comment_action', comment_id=comment.id, action='unlike') }}"><i class="fas fa-thumbs-up"></i></a>
             {% else %}
             <a href="{{ url_for('main.like_comment_action', comment_id=comment.id, action='like') }}"><i class="far fa-thumbs-up"></i></a>
+             {% endif %}
              {% endif %}
 
 
