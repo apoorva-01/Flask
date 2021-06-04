@@ -389,6 +389,7 @@ class Post(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     comments = db.relationship('Comment', backref='post', lazy='dynamic', cascade="delete, merge, save-update")
+    posts_like = db.relationship('PostLike', backref='like', lazy='dynamic', cascade="delete, merge, save-update")
 
 
     @staticmethod
@@ -414,6 +415,8 @@ class Comment(db.Model):
     disabled = db.Column(db.Boolean)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
+    comments_like = db.relationship('CommentLike', backref='like', lazy='dynamic', cascade="delete, merge, save-update")
+
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):
