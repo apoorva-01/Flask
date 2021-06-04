@@ -284,7 +284,7 @@ def password_reset(token):
     form = PasswordResetForm()
 
     if form.validate_on_submit():
-        pw_hash = flask_bcrypt.generate_password_hash(form.password.data)
+        pw_hash = flask_bcrypt.generate_password_hash(form.password.data).decode('utf8')
         if User.reset_password(token,   pw_hash):
 
             db.session.commit()
