@@ -1,1 +1,1 @@
-web: gunicorn bills:app --preload -b 0.0.0.0:5000 
+web: gunicorn bills:app --preload  
