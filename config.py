@@ -28,8 +28,8 @@ class Config:
     ALLOWED_EXTENSIONS = { 'jpg'}
     UPLOAD_FOLDER='C:/Users/Sourav Verma/Desktop/Flask/Bills App/app/static/img/user-profile-pic/'
 
-    CELERY_BROKER_URL='redis://localhost:6379/0'
-    result_backend='redis://localhost:6379/0'
+    # CELERY_BROKER_URL='redis://localhost:6379/0'
+    # result_backend='redis://localhost:6379/0'
 
    
     # DETECT_BASE_URL = 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect'
