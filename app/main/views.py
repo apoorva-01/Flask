@@ -379,7 +379,7 @@ def add():
         return render_template('add.html')
 
     elif(request.method == "POST"):
-        username = current_user.username
+        # username = current_user.username
         user_id = current_user.id
         billName = request.form.get('bill_name')
         billCategory = request.form.get('bill_category')
