@@ -7,9 +7,8 @@ from flask_moment import Moment
 from config import config
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
-from celery import Celery
 from flask_pagedown import PageDown
-from celery import Celery
+# from celery import Celery
 from config import config, Config
 
 
@@ -24,7 +23,7 @@ bootstrap = Bootstrap()
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 pagedown = PageDown()
-celery = Celery(__name__, broker=Config.CELERY_BROKER_URL)
+# celery = Celery(__name__, broker=Config.CELERY_BROKER_URL)
 
 # create_app() function is the application factory, which takes as an argument the name of a configuration to use for the application.
 def create_app(config_name='default'):
@@ -39,7 +38,7 @@ def create_app(config_name='default'):
     login_manager.init_app(app)
     bootstrap.init_app(app)
     pagedown.init_app(app)
-    celery.conf.update(app.config)
+    # celery.conf.update(app.config)
     
 
     # Blueprint 'main' for authentication
