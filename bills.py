@@ -4,19 +4,14 @@ from app.models import User, Follow, Role, Permission, Post, Comment,Entry,Comme
 import sys
 import click
 import coverage
-from flask_migrate import Migrate
 
-app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+app = create_app(os.getenv('FLASK_CONFIG') or 'heroku')
 
-db.create_all()
-db.session.commit()
 
 
 @app.shell_context_processor
 def make_shell_context():
-    
-    db.create_all()
-    db.session.commit()
+
     return dict(db=db, User=User, Follow=Follow, Role=Role,
                 Permission=Permission, Post=Post, Comment=Comment,Entry=Entry,PostLike=PostLike,CommentLike=CommentLike)
 
@@ -39,7 +34,6 @@ if os.environ.get('FLASK_COVERAGE'):
 
 
 
-migrate = Migrate(app, db)
 
 
 

@@ -1,1 +1,1 @@
-web: gunicorn bills:server
+web: gunicorn bills:app
