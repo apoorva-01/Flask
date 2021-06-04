@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+<div style="margin-top:100px"class="page-header container">
+    <h1>Edit Bill Entry</h1>
+
+
+{% import "bootstrap/wtf.html" as wtf %}
+<form class="form form-horizontal" method="post" role="form">
+{{ wtf.form_field(form.bill_name ) }}
+{{ wtf.form_field(form.amount) }}
+{{ wtf.form_field(form.note) }}
+{{ wtf.form_field(form.submit, class="btn btn-success") }}
+
+{{ wtf.form_field(form.discard, class="btn btn-danger") }}
+</form>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
+{% endblock %}
+
+

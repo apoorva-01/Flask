@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block head %}
+{% import "bootstrap/wtf.html" as wtf %}
+<!-- Page title -->
+<title>Set and Get</title>
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+{% block body %}
+<center>
+  <!-- Welcome to and Bill Reminder Heading -->
+  {% if current_user.is_authenticated %}
+  <h5 class="second-animation">Welcome, {{current_user.name}}</h5>
+  {% else %}
+  <h5 class="second-animation">Welcome</h5>
+  {% endif %}
+  <h2 class="first-animation">Set & Get</h2>
+
+  <!-- Add Reminder Button -->
+  <a class="btn btn-outline-light" href="{{url_for('main.add')}}" role="button">
+    <i class="fas fa-plus-circle"></i> Add Reminder</a>
+  <br>
+
+  <!-- {% if current_user.is_authenticated %}
+    <a class='btn btn-primary' href="{{url_for('auth.logout')}}">Logout</a>
+    {% else %}
+    <a class='btn btn-primary' href="{{url_for('auth.login')}}">Login</a>
+    {% endif %} -->
+</center>
+
+
+{% block scripts %}
+{{ pagedown.include_pagedown() }}
+{% endblock %}
+
+
+
+
+<!-- Javascript link -->
+<script src="{{url_for('static', filename='js/index.js')}}" charset="utf-8"></script>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block head %}
+
+<!-- Page title -->
+<title>Community Page</title>
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/search_style.css')}}">
+
+{% endblock %}
+{% block body %}
+<!-- Write Posts -->
+<div class="pt-5">
+
+<!-- Search box with submit button -->
+<div class="container search-field">
+
+  <input type="text" name="searched_username" placeholder="Search your Query...">
+  <button type="button" name="search_submit" value="send" class="btn btn-success"><i class="fas fa-thumbs-up"></i> Submit</button>
+<br><br>
+</div>
+
+
+<div  class="container mb-2">
+<form method="POST">
+  {% if current_user.can(Permission.WRITE) %}
+  <h3 class='text-success'>Any Questions on Personal Finance ?</h3>
+  {% import "bootstrap/wtf.html" as wtf %}
+  <form class="form form-horizontal" method="post" role="form">
+    {{ form.hidden_tag() }}
+    {{ wtf.form_errors(form, hiddens="only") }}
+  
+    {{ wtf.form_field(form.body) }}
+    {{ wtf.form_field(form.submit, class="btn btn-danger") }}
+  </form>
+    {% endif %} 
+  </form>
+</div>
+<hr>
+
+
+<div class="container" >
+  <ul class="nav nav-pills">
+      <li class='nav-item'{% if not show_followed %} class="active"{% endif %}>
+        <a class="btn btn-primary "  href="{{ url_for('.show_all') }}">All</a>
+      </li>
+      {% if current_user.is_authenticated %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <li class='nav-item'{% if show_followed %} class="active"{% endif %}>
+        <a class="btn btn-primary "  href="{{ url_for('.show_followed') }}">Followed</a>
+      </li>
+      {% endif %}
+  </ul>
+</div>
+
+
+<!-- All  Posts -->
+<div class="container">
+{% include '_posts.html' %}
+
+<center>
+<!-- Pagination  -->
+{% if pagination %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% import "_macros.html" as macros %}
+<div class="pagination">{{ macros.pagination_widget(pagination, 'main.community') }}
+</div>
+{% endif %}
+</div>
+</center>
+
+{% endblock %}

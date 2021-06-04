@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block body %}
+
+
+<div class="jumbotron m-0 row ">
+  {% if user.photo == None %}
+    <div class="col-lg-6 col-sm-4">
+      <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=276) }}">
+    </div>
+    {% else %}
+    <div class="col-lg-6 col-sm-4">
+      <img class="img-rounded profile-thumbnail" src="{{ url_for('static',filename=user.photo)}}">
+    </div>
+  {% endif %}
+
+
+    
+    <div class="col-lg-6 col-sm-8">
+        <h1>{{ user.username }}</h1>
+
+        <!-- Name and Location -->
+        {% if user.name or user.location %}
+        <p>{% if user.name %}{{ user.name }}<br>{% endif %}
+            {% if user.location %}
+              <b> From : </b><a href="http://maps.google.com/?q={{ user.location }}">{{ user.location }}</a><br>
+            {% endif %}
+        </p>
+        {% endif %}
+
+        <!-- Mailto for Admin -->
+        {% if current_user.is_administrator() %}
+        <p><b>Email : </b><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+        {% endif %}
+
+        <!-- About Me, Member Since and Last Seen -->
+        {% if user.about_me %}<p><b>About Me : </b>{{ user.about_me }}</p>{% endif %}
+        {% if user.designation %}<p><b>Designation : </b>{{ user.designation }}</p>{% endif %}
+
+        <p><b>Member since :</b> {{ moment(user.member_since).format('L') }}. <br>
+       <b> Last seen : </b>{{ moment(user.last_seen).fromNow() }}.</p>
+        <!-- No of Questions and Answers -->
+        <p>{{ user.posts.count() }} Questions | {{ user.comments.count() }} Answers</p>
+        
+        <p>
+        <!-- Follow Unfollow Button -->
+            {% if current_user.can(Permission.FOLLOW) and user != current_user %}
+                {% if not current_user.is_following(user) %}
+                <a href="{{ url_for('.follow', username=user.username) }}" class="btn btn-primary">Follow</a>
+                {% else %}
+                <a href="{{ url_for('.unfollow', username=user.username) }}" class="btn btn-primary">Unfollow</a>
+                {% endif %}
+            {% endif %}
+
+        <!-- No of Followers and Folloing -->
+            <a  style="text-decoration: none" href="{{ url_for('.followers', username=user.username) }}">
+                Followers: <span  class="badge  badge-pill badge-primary">{{ user.followers.count()  }}</span></a>
+            <a  style="text-decoration: none" href="{{ url_for('.followed_by', username=user.username) }}">
+                Following: <span  class="badge  badge-pill badge-primary">{{ user.followed.count() }}</span></a>
+            {% if current_user.is_authenticated and user != current_user and user.is_following(current_user) %}
+            | <span class="label label-default">Follows you</span>
+            {% endif %}
+        </p>
+        <p>{% if user == current_user %}
+            <a class="btn btn-primary" href="{{ url_for('auth.edit_profile') }}">Edit Profile</a>
+            {% endif %}
+            {% if current_user.is_administrator() %}
+            <a class="btn btn-danger" href="{{ url_for('auth.edit_profile_admin', id=user.id) }}">Edit Profile [Admin]</a>
+            {% endif %}
+        </p>
+    </div>
+</div>
+
+{% if user == current_user %}
+<div class="container" >
+  <h1 style="text-align: center;">Expenditure</h1>
+  <canvas id="doughnut-chart" width=3% ></canvas>
+</div>
+{% endif %}
+
+<div style="margin-top:100px" class="container">
+<h3>Posts by {{ user.username }}</h3>
+{% include '_posts.html' %}
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, '.user', username=user.username) }}
+</div>
+</div>
+
+{% if user == current_user %}
+<!-- Table of Information  -->
+<div class="container">
+    <table style="text-align: center" class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th style="font-size: 20px" colspan="2">Your Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>{{user.name}}</td>
+        </tr>
+        <tr>
+          <td>Username</td>
+          <td>{{user.username}}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td>{{user.phone}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+{% endif %}
+{% endif %}
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
+<script>
+         new Chart(document.getElementById("doughnut-chart"), {
+            type: 'doughnut',
+            data: {
+            labels: ['accomodation', 'credit card','electricity','TV','Education','Car','Two wheeler',
+            'Food','Gifts','Insurance','Medicare','Pets','Sports','Shopping','Tax','Vacation','Investment',
+            'Savings','Child care','Other'],
+            datasets: [
+                {
+                backgroundColor: ["rgb(204, 102, 102)", "rgb(230, 0, 230)","rgb(102, 102, 255)","rgb(0, 153, 51)","rgb(179, 179, 0)","rgb(255, 77, 148)", "rgb(77, 0, 153)", "rgb(51, 204, 204)", "rgb(51, 255, 119)", "rgb(204, 102, 255)","rgb(128, 128, 0)","rgb(102, 102, 153)","rgb(255, 153, 0)","rgb(0, 102, 204)","rgb(153, 153, 102)","rgb(102, 153, 153)","rgb(252, 174, 174)","rgb(0, 255, 153)","rgb(230, 230, 0)"],
+                
+                
+                data: ['{{accommodation_sum}}',"{{credit_sum}}","{{electricity_sum}}","{{tv_sum}}",
+                "{{education_sum}}","{{car_sum}}","{{twowheeler_sum}}","{{food_sum}}","{{gifts_sum}}",
+                "{{insurance_sum}}","{{medicare_sum}}","{{pet_sum}}","{{sports_sum}}","{{shopping_sum}}",
+                "{{tax_sum}}","{{vacation_sum}}","{{investment_sum}}",
+                "{{savings_sum}}","{{child_sum}}","{{other_sum}}"],
+                datalabels:{
+                display:false,
+                color:"black",
+                    },
+                },
+            ],
+            }
+            })
+</script>
+
+
+
+{% endblock %}
