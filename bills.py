@@ -6,17 +6,17 @@ import click
 import coverage
 
 app = create_app('default')
+
 app.secret_key='juejnrg!9m@fnjnj%^&*09844'
 
 @app.shell_context_processor
 def make_shell_context():
-    db.create_all ()
 
     return dict(db=db, User=User, Follow=Follow, Role=Role,
                 Permission=Permission, Post=Post, Comment=Comment,Entry=Entry,PostLike=PostLike,CommentLike=CommentLike)
 
  
-db.create_all ()
+
 
 @app.cli.command ('initdb')
 def initdb_command ():
