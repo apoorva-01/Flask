@@ -4,7 +4,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
     SECRET_KEY = 'juejnrg!9m@fnjnj%^&*09844'
-    # SESSION_TYPE = 'redis'
+    SESSION_TYPE = 'redis'
     # Mail Configuration
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
     MAIL_PORT = int(os.environ.get('MAIL_PORT', '465'))
