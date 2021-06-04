@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request,session,redirect, url_for,flash,abort,make_response,current_app
-from flask_mail import Mail,Message
+# from flask import Flask, render_template, request,session,redirect, url_for,flash,abort,make_response,current_app
+# from flask_mail import Mail,Message
 # from .__init__ import celery
 
 
