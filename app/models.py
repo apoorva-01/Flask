@@ -115,12 +115,12 @@ class User(UserMixin, db.Model):
                                foreign_keys=[Follow.follower_id],
                                backref=db.backref('follower', lazy='joined'),
                                lazy='dynamic',
-                               cascade='all, delete-orphan',passive_deletes=True)
+                              passive_deletes=True)
     followers = db.relationship('Follow',
                                 foreign_keys=[Follow.followed_id],
                                 backref=db.backref('followed', lazy='joined'),
                                 lazy='dynamic',
-                                cascade='all, delete-orphan',passive_deletes=True)
+                                passive_deletes=True)
 
     comments = db.relationship('Comment', backref='author', lazy='dynamic',passive_deletes=True)
 
