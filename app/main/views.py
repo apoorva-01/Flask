@@ -181,7 +181,7 @@ def user(username):
     tv_sum=tv_sum, education_sum=education_sum,car_sum=car_sum,twowheeler_sum=twowheeler_sum,
     food_sum=food_sum,pet_sum=pet_sum,sports_sum=sports_sum,shopping_sum=shopping_sum,tax_sum=tax_sum,
     vacation_sum=vacation_sum,investment_sum=investment_sum,savings_sum=savings_sum,child_sum=child_sum,
-    other_sum=other_sum,medicare_sum=medicare_sum)
+    other_sum=other_sum,medicare_sum=medicare_sum,entries=entries)
 
 
 # Post page

@@ -4,7 +4,6 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
     SECRET_KEY = 'juejnrg!9m@fnjnj%^&*09844'
-    # SESSION_TYPE = 'redis'
     SESSION_TYPE = 'filesystem'
     # Mail Configuration
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
@@ -12,10 +11,8 @@ class Config:
     MAIL_USE_SSL = True
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'main.hu.demo@gmail.com'
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'merkonhipta'
-    BILL_MAIL_SUBJECT_PREFIX = 'Bills Reminder'
+    BILL_MAIL_SUBJECT_PREFIX = 'Set and Get '
     BILL_MAIL_SENDER = 'Set & Get  <main.hu.demo@gmail.com>'
-    FLASKY_MAIL_SENDER = 'Set & Get <main.hu.demo@gmail.com>'
-    FLASKY_MAIL_SUBJECT_PREFIX = 'Bills Reminder'
 
     BILL_ADMIN ='main.hu.demo@gmail.com'
 
@@ -57,29 +54,13 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI ='postgresql://postgres:Apoo124@#@localhost:5432/postgres'
-class HerokuConfig(ProductionConfig):
-    SSL_REDIRECT = True if os.environ.get('DYNO') else False
 
-    @classmethod
-    def init_app(cls, app):
-        ProductionConfig.init_app(app)
-
-        # handle reverse proxy server headers
-        from werkzeug.contrib.fixers import ProxyFix
-        app.wsgi_app = ProxyFix(app.wsgi_app)
-
-        # log to stderr
-        import logging
-        from logging import StreamHandler
-        file_handler = StreamHandler()
-        file_handler.setLevel(logging.INFO)
-        app.logger.addHandler(file_handler)
     
 config = {
  'development': DevelopmentConfig,
  'production': ProductionConfig,
- 'default': DevelopmentConfig,
-  'heroku': HerokuConfig
+ 'default': DevelopmentConfig
+
 }
 
 
