@@ -12,8 +12,8 @@ class Config:
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'main.hu.demo@gmail.com'
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'merkonhipta'
     BILL_MAIL_SUBJECT_PREFIX = 'Bills Reminder'
-    BILL_MAIL_SENDER = 'Bill Admin <main.hu.demo@gmail.com>'
-    FLASKY_MAIL_SENDER = 'main.hu.demo@gmail.com'
+    BILL_MAIL_SENDER = 'Set & Get  <main.hu.demo@gmail.com>'
+    FLASKY_MAIL_SENDER = 'Set & Get <main.hu.demo@gmail.com>'
     FLASKY_MAIL_SUBJECT_PREFIX = 'Bills Reminder'
 
     BILL_ADMIN ='main.hu.demo@gmail.com'
@@ -32,13 +32,13 @@ class Config:
     result_backend='redis://localhost:6379/0'
 
    
-    DETECT_BASE_URL = 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect'
-    TRANSLATE_BASE_URL = 'https://google-translate1.p.rapidapi.com/language/translate/v2'
-    HEADERS = {
-       'x-rapidapi-host': "google-translate1.p.rapidapi.com",
-       'x-rapidapi-key': "YOUR-VERY-OWN-RAPID-API-KEY-GOES-HERE",
-       'content-type': "application/x-www-form-urlencoded"
-       }
+    # DETECT_BASE_URL = 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect'
+    # TRANSLATE_BASE_URL = 'https://google-translate1.p.rapidapi.com/language/translate/v2'
+    # HEADERS = {
+    #    'x-rapidapi-host': "google-translate1.p.rapidapi.com",
+    #    'x-rapidapi-key': "YOUR-VERY-OWN-RAPID-API-KEY-GOES-HERE",
+    #    'content-type': "application/x-www-form-urlencoded"
+    #    }
 
 
 
@@ -49,7 +49,8 @@ class Config:
 # Database Configuration
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:Apoo124@#@localhost:5432/postgres'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:Apoo124@#@localhost:5432/postgres'
+    DATABASE_URL = 'postgres://bfvsltjxhtskzq:028d07027c7ca05acbd1d7ad4e65b4ccf186810b38b359bc482a46e08d2c0b66@ec2-3-217-219-146.compute-1.amazonaws.com:5432/d9vglhdsm2qkds'
     
 
 class ProductionConfig(Config):
