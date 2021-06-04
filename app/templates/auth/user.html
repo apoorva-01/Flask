@@ -80,7 +80,7 @@
 <h3 style="margin-right: 5%;font-weight: bold;">Posts by {{ user.username }}</h3>
 {% include '_posts.html' %}
 {% if pagination %}
-<div class="pagination">
+<div class="pagination justify-content-center" style="margin: 2%">
     {{ macros.pagination_widget(pagination, '.user', username=user.username) }}
 </div>
 </div>
@@ -90,7 +90,7 @@
 <!-- Table of Information  -->
 <center>
 <div class="container">
-    <table style="text-align: center;color: white;font-weight: bold;box-shadow: 5px 5px 10px grey;width: 70%;background-color:#040461e0;" class="table table-hover table-light">
+    <table style="text-align: center;color: white;font-weight: bold;box-shadow: 5px 5px 10px grey;width: 70%;background-color:#0152a9;" class="table table-hover table-light">
       <thead>
         <tr>
           <th style="font-size: 30px;text-align: center;" colspan="2">Your Details</th>
