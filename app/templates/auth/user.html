@@ -73,10 +73,12 @@
 </div>
 
 {% if (user == current_user ) %}
+{% if (total_entries!=0) %}
 <div class="container" >
   <h1 style="text-align: center;">Expenditure</h1>
   <canvas id="doughnut-chart" width=3% ></canvas>
 </div>
+{% endif %}
 {% endif %}
 
 <div style="margin-top:100px" class="container">

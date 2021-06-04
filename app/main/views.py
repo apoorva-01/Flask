@@ -86,7 +86,7 @@ def user(username):
 
     # For Chart
     entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').all()
-    total_entries = entries.count()
+    total_entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').count()
     total=Entry.query.filter_by(user_id=current_user.id).count()
 
 
