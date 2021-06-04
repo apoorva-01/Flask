@@ -80,8 +80,7 @@ def user(username):
         page, per_page=current_app.config['POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
-    total = Entry.query.filter_by(username=username).count()
-    user.total_bills=total
+
 
 
 
