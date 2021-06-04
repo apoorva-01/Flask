@@ -369,7 +369,7 @@ class PostLike(db.Model):
     __tablename__ = 'post_like'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"))
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id', ondelete="CASCADE"))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id', ondelete="CASCADE"),nullable=False)
 
 class CommentLike(db.Model):
     __tablename__ = 'comment_like'
