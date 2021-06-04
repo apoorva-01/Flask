@@ -344,7 +344,7 @@ def load_user(id):
 class Entry(db.Model):
     __tablename__ = 'entry'
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
-    username = db.Column(db.String(80), nullable=False,unique=True)
+    username = db.Column(db.String(80), nullable=False)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
     billName = db.Column(db.String(80), nullable=False)
     billCategory = db.Column(db.String(12), nullable=False)
