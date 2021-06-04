@@ -19,7 +19,7 @@ def make_shell_context():
 
 
 @app.cli.command (name="create_tables")
-def initdb_command ():
+def create_tables():
     db.create_all ()
     db.session.commit()
 
