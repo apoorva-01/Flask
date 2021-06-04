@@ -24,15 +24,7 @@
                 {% endif %}
             </div>
 
-            <p>{{post_upvote}} Upvotes</p>
-
-            {% if current_user.is_authenticated %}
-            {% if current_user.has_liked_post(post) %}
-            <a href="{{ url_for('main.like_post_action', post_id=post.id, action='unlike') }}"><i class="fas fa-thumbs-up"></i></a>
-            {% else %}
-            <a href="{{ url_for('main.like_post_action', post_id=post.id, action='like') }}"><i class="far fa-thumbs-up"></i></a>
-             {% endif %}
-             {% endif %}
+            
 
 
             
@@ -40,6 +32,19 @@
 
 
             <div class="post-footer">
+                
+                <p style="margin: 1%;float: left;vertical-align: bottom;">{{post_upvote}} Upvotes
+
+                {% if current_user.is_authenticated %}
+                {% if current_user.has_liked_post(post) %}
+                <a href="{{ url_for('main.like_post_action', post_id=post.id, action='unlike') }}"><i class="fas fa-thumbs-up"></i></a>
+                {% else %}
+                <a href="{{ url_for('main.like_post_action', post_id=post.id, action='like') }}"><i class="far fa-thumbs-up"></i></a>
+                {% endif %}
+                {% endif %}
+                
+                </p>
+                
                 {% if current_user == post.author %}
                 <a  class="btn btn-danger" href="{{ url_for('.edit', id=post.id) }}">
                     <span class="label label-primary">Edit</span>
