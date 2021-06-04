@@ -82,8 +82,6 @@ def user(username):
     posts = pagination.items
 
 
-
-
     # For Chart
     entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').all()
     total_entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').count()
