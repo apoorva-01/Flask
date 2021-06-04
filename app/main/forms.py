@@ -13,8 +13,6 @@ class PostForm(FlaskForm):
     delete =  SubmitField("Delete")
     submit = SubmitField('Post')
 
-
-
 class CommentForm(FlaskForm):
     body = StringField('Enter your answer', validators=[DataRequired()])
     delete =  SubmitField("Delete")

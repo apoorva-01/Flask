@@ -465,7 +465,7 @@ def add():
 @login_required
 def show_reminders():
     entry=Entry.query.filter_by(user_id=current_user.id).all()
-    total=Entry.query.filter_by(user_id=current_user.id).count()
+    total=Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Unpaid').count()
     
     return render_template('show_reminders.html',entry=entry,total=total)
 
