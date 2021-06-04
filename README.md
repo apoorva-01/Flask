@@ -18,29 +18,29 @@ What a user can do:
 
 
 ## Home Page
-![Website Image](static/img/readme_pic1.jpg?raw=true "Title")
+![Website Image](app/static/img/readme_pic1.jpg?raw=true "Title")
 
 ## Add Reminder Page
-![Website Image](static/img/readme_pic2.jpg?raw=true "Title")
+![Website Image](app/static/img/readme_pic2.jpg?raw=true "Title")
 
 ## Search Reminder Page
-![Website Image](static/img/readme_pic9.jpg?raw=true "Title")
+![Website Image](app/static/img/readme_pic9.jpg?raw=true "Title")
 
 ## Search Page
-![Website Image](static/img/readme_pic3.jpg?raw=true "Title")
+![Website Image](app/static/img/readme_pic3.jpg?raw=true "Title")
 
 
 ## Account Page
-![Website Image](static/img/readme_pic8.jpg?raw=true "Title")
+![Website Image](app/static/img/readme_pic8.jpg?raw=true "Title")
 
 ## Login Page
-![Website Image](static/img/readme_pic4.jpg?raw=true "Title")
+![Website Image](app/static/img/readme_pic4.jpg?raw=true "Title")
 
 ## Register Page
-![Website Image](static/img/readme_pic7.jpg?raw=true "Title")
+![Website Image](app/static/img/readme_pic7.jpg?raw=true "Title")
 
 ## User Databse
-![Website Image](static/img/readme_pic5.jpg?raw=true "Title")
+![Website Image](app/static/img/readme_pic5.jpg?raw=true "Title")
 
 
 ## Bills Databse
@@ -115,9 +115,9 @@ python app.py
 
 *  Make a local database of name "bills_app" with 2 tables named "entry" and "user" respectively 
 ## Entry
-![Website Image](static/img/readme_pic5.jpg?raw=true "Title")<br>
+![Website Image](app/static/img/readme_pic5.jpg?raw=true "Title")<br>
 ## User
-![Website Image](static/img/readme_pic6.jpg?raw=true "Title")<br>
+![Website Image](app/static/img/readme_pic6.jpg?raw=true "Title")<br>
 
 
 *  Now Head on to ['http://127.0.0.1:5000/'](http://127.0.0.1:5000/)
