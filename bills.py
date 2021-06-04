@@ -6,6 +6,7 @@ import click
 import coverage
 
 app = create_app('default')
+db.create_all ()
 
 app.secret_key='juejnrg!9m@fnjnj%^&*09844'
 
@@ -16,6 +17,7 @@ def make_shell_context():
                 Permission=Permission, Post=Post, Comment=Comment,Entry=Entry,PostLike=PostLike,CommentLike=CommentLike)
 
  
+
 
 
 @app.cli.command ('initdb')
