@@ -24,14 +24,16 @@
                 {% endif %}
             </div>
 
+            <p>{{post_upvote}} Upvotes</p>
 
-
-
+            {% if current_user.is_authenticated %}
             {% if current_user.has_liked_post(post) %}
             <a href="{{ url_for('main.like_post_action', post_id=post.id, action='unlike') }}"><i class="fas fa-thumbs-up"></i></a>
             {% else %}
             <a href="{{ url_for('main.like_post_action', post_id=post.id, action='like') }}"><i class="far fa-thumbs-up"></i></a>
              {% endif %}
+             {% endif %}
+
 
             
 
