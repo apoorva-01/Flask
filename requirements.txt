@@ -63,6 +63,7 @@ pyparsing==2.4.7
 python-dateutil==2.8.1
 python-editor==1.0.4
 pytz==2021.1
+redis==3.5.3
 requests==2.25.1
 rfc3986==1.5.0
 six==1.16.0
