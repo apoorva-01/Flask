@@ -51,8 +51,8 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:Apoo124@#@localhost:5432/postgres'
-    DATABASE_URL = 'postgres://bfvsltjxhtskzq:028d07027c7ca05acbd1d7ad4e65b4ccf186810b38b359bc482a46e08d2c0b66@ec2-3-217-219-146.compute-1.amazonaws.com:5432/d9vglhdsm2qkds'
-    SQLALCHEMY_DATABASE_URI  = 'postgres://bfvsltjxhtskzq:028d07027c7ca05acbd1d7ad4e65b4ccf186810b38b359bc482a46e08d2c0b66@ec2-3-217-219-146.compute-1.amazonaws.com:5432/d9vglhdsm2qkds'
+    DATABASE_URL = 'postgresql://bfvsltjxhtskzq:028d07027c7ca05acbd1d7ad4e65b4ccf186810b38b359bc482a46e08d2c0b66@ec2-3-217-219-146.compute-1.amazonaws.com:5432/d9vglhdsm2qkds'
+    SQLALCHEMY_DATABASE_URI  = 'postgresql://bfvsltjxhtskzq:028d07027c7ca05acbd1d7ad4e65b4ccf186810b38b359bc482a46e08d2c0b66@ec2-3-217-219-146.compute-1.amazonaws.com:5432/d9vglhdsm2qkds'
     
 
 class ProductionConfig(Config):
