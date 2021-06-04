@@ -337,7 +337,7 @@ login_manager.anonymous_user = AnonymousUser
 
 @login_manager.user_loader
 def load_user(id):
-    return User.query.get(id)
+    return User.query.get(int(id))
 
 
 
@@ -388,7 +388,7 @@ class Post(db.Model):
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"),nullable=False)
-    comments = db.relationship('Comment', backref='post', lazy='dynamic',passive_deletes=True )
+    comments = db.relationship('Comment', backref='post', lazy='dynamic', passive_deletes=True )
     posts_like = db.relationship('PostLike', backref='like', lazy='dynamic',passive_deletes=True)
 
 
