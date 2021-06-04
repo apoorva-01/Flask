@@ -119,9 +119,9 @@
 
 
 {% else %}
-<div class="container" style="position: absolute;top: 30%;">
+<div class="container" style="position: absolute;top: 15%;width: 50%;margin-left: 5%;">
     <center>
-        <h2>Please Login First, to add Bill's Reminder</h2>
+        <h2 style="padding:0;">Please Login to add Bill Reminders</h2>
         <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
         <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
             up</a>
