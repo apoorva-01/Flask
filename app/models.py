@@ -113,13 +113,13 @@ class User(UserMixin, db.Model):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id', ondelete="CASCADE"),nullable=False)
     followed = db.relationship('Follow',
                                foreign_keys=[Follow.follower_id],
-                               backref=db.backref('follower', lazy='joined', cascade="all,delete"),
-                               lazy='dynamic', passive_deletes=True
+                               backref=db.backref('follower', lazy='joined', passive_deletes=True),
+                               lazy='dynamic'
                              )
     followers = db.relationship('Follow',
                                 foreign_keys=[Follow.followed_id],
-                                backref=db.backref('followed', lazy='joined', cascade="all,delete"),
-                                lazy='dynamic', passive_deletes=True
+                                backref=db.backref('followed', lazy='joined', passive_deletes=True),
+                                lazy='dynamic'
                                )
 
     comments = db.relationship('Comment', backref='author', lazy='dynamic',passive_deletes=True)
