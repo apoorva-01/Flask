@@ -248,7 +248,7 @@ def change_password():
                     flash('You are entering old password, please enter a new one')
                     return render_template("auth/change_password.html", form=form)
                 else:
-                    hash_pass = flask_bcrypt.generate_password_hash(form.password.data)
+                    hash_pass = flask_bcrypt.generate_password_hash(form.password.data).decode('utf-8')
                     current_user.password = hash_pass
                     db.session.add(current_user)
                     db.session.commit()
