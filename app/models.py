@@ -23,7 +23,6 @@ class Permission:
 # User Role
 class Role(db.Model):
     __tablename__ = 'roles'
-    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True)
     default = db.Column(db.Boolean, default=False, index=True)
@@ -79,9 +78,8 @@ class Role(db.Model):
 
 class Follow(db.Model):
     __tablename__ = 'follow'
-    __table_args__ = {"schema":"bills_app"}
-    follower_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'),primary_key=True,nullable=False)
-    followed_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'),primary_key=True,nullable=False)
+    follower_id = db.Column(db.Integer, db.ForeignKey('user.id'),primary_key=True,nullable=False)
+    followed_id = db.Column(db.Integer, db.ForeignKey('user.id'),primary_key=True,nullable=False)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
 
@@ -95,7 +93,6 @@ class Follow(db.Model):
 
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
-    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key = True,autoincrement=True)
     name = db.Column(db.String(80), nullable=False)
     username = db.Column(db.String(64), unique=True, index=True)
@@ -113,7 +110,7 @@ class User(UserMixin, db.Model):
     avatar_hash = db.Column(db.String(32))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     # manager = db.relationship('MoneyManager', backref='money_manager', lazy='dynamic')
-    role_id = db.Column(db.Integer, db.ForeignKey('bills_app.roles.id'),nullable=False)
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'),nullable=False)
     followed = db.relationship('Follow',
                                foreign_keys=[Follow.follower_id],
                                backref=db.backref('follower', lazy='joined'),
@@ -346,10 +343,9 @@ def load_user(id):
 
 class Entry(db.Model):
     __tablename__ = 'entry'
-    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     username = db.Column(db.String(80), nullable=False,unique=True)
-    user_id = db.Column(db.Integer,db.ForeignKey('bills_app.user.id'))
+    user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
     billName = db.Column(db.String(80), nullable=False)
     billCategory = db.Column(db.String(12), nullable=False)
     amount = db.Column(db.Integer)
@@ -371,17 +367,15 @@ class Entry(db.Model):
 
 class PostLike(db.Model):
     __tablename__ = 'post_like'
-    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'))
-    post_id = db.Column(db.Integer, db.ForeignKey('bills_app.posts.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
 
 class CommentLike(db.Model):
     __tablename__ = 'comment_like'
-    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'))
-    comment_id = db.Column(db.Integer, db.ForeignKey('bills_app.comments.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    comment_id = db.Column(db.Integer, db.ForeignKey('comments.id'))
 
 
 
@@ -389,12 +383,11 @@ class CommentLike(db.Model):
 
 class Post(db.Model):
     __tablename__ = 'posts'
-    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text)
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    author_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'))
+    author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     comments = db.relationship('Comment', backref='post', lazy='dynamic')
 
 
@@ -414,14 +407,13 @@ db.event.listen(Post.body, 'set', Post.on_changed_body)
 
 class Comment(db.Model):
     __tablename__ = 'comments'
-    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text)
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     disabled = db.Column(db.Boolean)
-    author_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'))
-    post_id = db.Column(db.Integer, db.ForeignKey('bills_app.posts.id'))
+    author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):
