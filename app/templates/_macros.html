@@ -1,7 +1,7 @@
 {% macro pagination_widget(pagination, endpoint, fragment='') %}
 {% import "bootstrap/wtf.html" as wtf %}
 <nav aria-label="Page navigation example ">
-<ul class="pagination ">
+<ul class="pagination justify-content-center" style="margin:2%;">
     <li class="page-item"{% if not pagination.has_prev %} class="disabled"{% endif %}>
         <a class="page-link" style="border-top-left-radius: 25px;border-bottom-left-radius: 25px;" href="{% if pagination.has_prev %}{{ url_for(endpoint, page=pagination.prev_num, **kwargs) }}
         {{ fragment }}{% else %}#{% endif %}">&laquo;
