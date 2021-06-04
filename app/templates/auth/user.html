@@ -73,7 +73,7 @@
 </div>
 
 {% if user == current_user %}
-{% if entries is not None%}
+{% if total_entries!=0 %}
 <div class="container" >
   <h1 style="text-align: center;">Expenditure</h1>
   <canvas id="doughnut-chart" width=3% ></canvas>
