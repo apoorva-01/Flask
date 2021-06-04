@@ -368,8 +368,8 @@ class Entry(db.Model):
 class PostLike(db.Model):
     __tablename__ = 'post_like'
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id', ondelete="CASCADE"))
 
 class CommentLike(db.Model):
     __tablename__ = 'comment_like'
@@ -389,7 +389,7 @@ class Post(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     comments = db.relationship('Comment', backref='post', lazy='dynamic', cascade="delete, merge, save-update")
-    posts_like = db.relationship('PostLike', backref='like', lazy='dynamic', cascade="delete, merge, save-update")
+    posts_like = db.relationship('PostLike', backref='like', lazy='dynamic',cascade='all, delete-orphan',passive_deletes=True)
 
 
     @staticmethod
