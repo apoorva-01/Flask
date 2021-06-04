@@ -98,7 +98,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), unique=True, index=True)
 
     email = db.Column(db.String(64), unique=True, index=True)
-    phoneNo = db.Column(db.String(80), nullable=False)
+    phoneNo = db.Column(db.String(80))
     password = db.Column(db.String(128))
     location = db.Column(db.String(64), nullable=True)
     about_me = db.Column(db.Text())
@@ -121,14 +121,7 @@ class User(UserMixin, db.Model):
                                 backref=db.backref('followed', lazy='joined', passive_deletes=True),
                                 lazy='dynamic'
                                )
-
     comments = db.relationship('Comment', backref='author', lazy='dynamic',passive_deletes=True)
-
-
-
-
-
-
     post_liked = db.relationship('PostLike',foreign_keys='PostLike.user_id',backref='user', lazy='dynamic',passive_deletes=True)
     comment_liked = db.relationship('CommentLike',foreign_keys='CommentLike.user_id',backref='user', lazy='dynamic',passive_deletes=True)
 
@@ -165,15 +158,6 @@ class User(UserMixin, db.Model):
         return CommentLike.query.filter(
             CommentLike.user_id == self.id,
             CommentLike.comment_id == comment.id).count() > 0
-
-
-
-
-
-
-
-
-
 
 
 
@@ -346,17 +330,17 @@ class Entry(db.Model):
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     # username = db.Column(db.String(80), nullable=False)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id', ondelete="CASCADE"),nullable=False)
-    billName = db.Column(db.String(80), nullable=False)
-    billCategory = db.Column(db.String(12), nullable=False)
+    billName = db.Column(db.String(80))
+    billCategory = db.Column(db.String(12))
     amount = db.Column(db.Integer)
-    dueDate = db.Column(db.DateTime(3), nullable=False)
-    dateOfAdd =  db.Column(db.String(120), nullable=False)
+    dueDate = db.Column(db.DateTime(3))
+    dateOfAdd =  db.Column(db.String(120))
     notificationReminder= db.Column(db.Integer)
-    answer = db.Column(db.String(12), nullable=False)
-    repeatDays = db.Column(db.String(20), nullable=True)
-    repeatTime = db.Column(db.String(20), nullable=True)
-    note = db.Column(db.String(20), nullable=False)
-    paidUnpaid= db.Column(db.String(30), nullable=True)
+    answer = db.Column(db.String(12))
+    repeatDays = db.Column(db.String(20))
+    repeatTime = db.Column(db.String(20))
+    note = db.Column(db.String(20))
+    paidUnpaid= db.Column(db.String(30))
 
 
     def __repr__(self):
