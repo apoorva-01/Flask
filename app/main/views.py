@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Message
 from datetime import datetime, timedelta, date
 from os import environ
-from celery import Celery
+# from celery import Celery
 from flask_moment import Moment
 from sqlalchemy import UniqueConstraint
 from config import Config
@@ -17,7 +17,7 @@ from ..decorators import admin_required, permission_required
 from .forms import PostForm, CommentForm
 from flask import current_app, render_template
 from flask_mail import Message, Mail
-from ..celery_email import send_email_to_remind
+# from ..celery_email import send_email_to_remind
 from ..email_remind import send_email_to_remind_bill
 import MySQLdb 
 
