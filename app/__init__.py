@@ -35,6 +35,7 @@ def create_app(config_name='default'):
     flask_bcrypt.init_app(app)
     db.init_app(app)
     session.init_app(app)
+    
     login_manager.init_app(app)
     bootstrap.init_app(app)
     pagedown.init_app(app)

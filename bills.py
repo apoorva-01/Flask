@@ -7,7 +7,7 @@ import coverage
 
 app = create_app('default')
 
-
+app.secret_key='juejnrg!9m@fnjnj%^&*09844'
 
 @app.shell_context_processor
 def make_shell_context():
