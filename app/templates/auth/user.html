@@ -5,20 +5,15 @@
 
 
 <div class="jumbotron m-0 row ">
-  {% if user.photo == None %}
-    <div class="col-lg-6 col-sm-4">
-      <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=276) }}">
-    </div>
-    {% else %}
-    <div class="col-lg-6 col-sm-4">
-      <img class="img-rounded profile-thumbnail" src="{{ url_for('static',filename=user.photo)}}">
-    </div>
-  {% endif %}
-
-
-    
-    <div class="col-lg-6 col-sm-8">
-        <h1>{{ user.username }}</h1>
+  
+      
+      <div class="col-lg-12 col-sm-6" style="padding-left:20%;">
+        {% if user.photo == None %}
+          <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=276) }}" align="left" style="padding-right: 5%;">
+        {% else %}
+          <img class="img-rounded profile-thumbnail" src="{{ url_for('static',filename=user.photo)}}" align="left" style="padding-right: 5%;">
+        {% endif %}
+          <h1>{{ user.username }}</h1>
 
         <!-- Name and Location -->
         {% if user.name or user.location %}
