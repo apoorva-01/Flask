@@ -83,7 +83,7 @@ i {
 .tabs .tab-body {
   position: relative;
   padding: 10px 5px;
-  width: 30%;
+  width: 100%;
 }
 .tabs .tab-body > div {
   position: absolute;
@@ -96,6 +96,7 @@ i {
   top: 20px;
   opacity: 1;
   transform: scale(1);
+  width: 100%;
 }
 
 /* Tab content */
