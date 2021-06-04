@@ -401,7 +401,7 @@ def add():
         session['note'] = note
         session['date_of_add'] = date_of_add
 
-        entries = Entry(username=username,user_id=user_id, billName=billName, billCategory=billCategory, amount=amount, dueDate=dueDate,
+        entries = Entry(user_id=user_id, billName=billName, billCategory=billCategory, amount=amount, dueDate=dueDate,
                         notificationReminder=notificationReminder, answer=answer, repeatDays=repeatDays, repeatTime=repeatTime,
                         note=note, dateOfAdd=date_of_add, paidUnpaid=paidUnpaid)
         if request.form.get('submit') == 'Send':
