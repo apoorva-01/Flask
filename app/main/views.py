@@ -445,7 +445,7 @@ def add():
             # send_email_to_remind.apply_async(countdown=2,args=[current_user.email,
             # 'Reminding Your Bill','auth/email/change_email'])
 
-            send_email_to_remind(current_user.email,'Reminding Your Bill','auth/email/emailToRemind',user=current_user)
+            # send_email_to_remind(current_user.email,'Reminding Your Bill','auth/email/emailToRemind',user=current_user)
             send_email_to_remind_bill(current_user.email,'Reminding Your Bill','auth/email/emailToRemind',user=current_user)
 
 
