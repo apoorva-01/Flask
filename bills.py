@@ -5,7 +5,7 @@ import sys
 import click
 import coverage
 
-app = create_app(os.getenv('FLASK_CONFIG') or 'heroku')
+app = create_app('default')
 
 
 
