@@ -6,20 +6,18 @@ import click
 import coverage
 
 app = create_app('default')
-
 app.secret_key='juejnrg!9m@fnjnj%^&*09844'
 
 @app.shell_context_processor
 def make_shell_context():
-
     return dict(db=db, User=User, Follow=Follow, Role=Role,
                 Permission=Permission, Post=Post, Comment=Comment,Entry=Entry,PostLike=PostLike,CommentLike=CommentLike)
 
  
 
 
-@app.cli.command ('initdb')
-def initdb_command ():
+@app.click.command (name="create_tables")
+def create_tables():
     db.create_all ()
     db.session.commit()
 
