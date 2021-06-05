@@ -10,6 +10,8 @@ from markdown import markdown
 import bleach
 from flask_bcrypt import generate_password_hash,check_password_hash
 
+
+
 class Permission:
     FOLLOW = 1
     COMMENT = 2
@@ -17,14 +19,16 @@ class Permission:
     MODERATE = 8
     ADMIN = 16
 
+
 # User Role
 class Role(db.Model):
     __tablename__ = 'roles'
+    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True)
     default = db.Column(db.Boolean, default=False, index=True)
     permissions = db.Column(db.Integer)
-    users = db.relationship('User', backref='role', lazy='dynamic',passive_deletes=True)
+    users = db.relationship('User', backref='role', lazy='dynamic')
 
     def __init__(self, **kwargs):
         super(Role, self).__init__(**kwargs)
@@ -75,8 +79,9 @@ class Role(db.Model):
 
 class Follow(db.Model):
     __tablename__ = 'follow'
-    follower_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"),primary_key=True,nullable=False)
-    followed_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"),primary_key=True,nullable=False)
+    __table_args__ = {"schema":"bills_app"}
+    follower_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'),primary_key=True,nullable=False)
+    followed_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'),primary_key=True,nullable=False)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
 
@@ -90,12 +95,13 @@ class Follow(db.Model):
 
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
+    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key = True,autoincrement=True)
     name = db.Column(db.String(80), nullable=False)
     username = db.Column(db.String(64), unique=True, index=True)
 
     email = db.Column(db.String(64), unique=True, index=True)
-    phoneNo = db.Column(db.String(80))
+    phoneNo = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(128))
     location = db.Column(db.String(64), nullable=True)
     about_me = db.Column(db.Text())
@@ -105,22 +111,29 @@ class User(UserMixin, db.Model):
     last_seen = db.Column(db.DateTime(), default=datetime.utcnow)
     confirmed = db.Column(db.Boolean, default=False)
     avatar_hash = db.Column(db.String(32))
-    posts = db.relationship('Post', backref='author', lazy='dynamic',passive_deletes=True)
+    posts = db.relationship('Post', backref='author', lazy='dynamic')
     # manager = db.relationship('MoneyManager', backref='money_manager', lazy='dynamic')
-    role_id = db.Column(db.Integer, db.ForeignKey('roles.id', ondelete="CASCADE"),nullable=False)
+    role_id = db.Column(db.Integer, db.ForeignKey('bills_app.roles.id'),nullable=False)
     followed = db.relationship('Follow',
                                foreign_keys=[Follow.follower_id],
-                               backref=db.backref('follower', lazy='joined', passive_deletes=True),
-                               lazy='dynamic'
-                             )
+                               backref=db.backref('follower', lazy='joined'),
+                               lazy='dynamic',
+                               cascade='all, delete-orphan')
     followers = db.relationship('Follow',
                                 foreign_keys=[Follow.followed_id],
-                                backref=db.backref('followed', lazy='joined', passive_deletes=True),
-                                lazy='dynamic'
-                               )
-    comments = db.relationship('Comment', backref='author', lazy='dynamic',passive_deletes=True)
-    post_liked = db.relationship('PostLike',foreign_keys='PostLike.user_id',backref='user', lazy='dynamic',passive_deletes=True)
-    comment_liked = db.relationship('CommentLike',foreign_keys='CommentLike.user_id',backref='user', lazy='dynamic',passive_deletes=True)
+                                backref=db.backref('followed', lazy='joined'),
+                                lazy='dynamic',
+                                cascade='all, delete-orphan')
+
+    comments = db.relationship('Comment', backref='author', lazy='dynamic')
+
+
+
+
+
+
+    post_liked = db.relationship('PostLike',foreign_keys='PostLike.user_id',backref='user', lazy='dynamic')
+    comment_liked = db.relationship('CommentLike',foreign_keys='CommentLike.user_id',backref='user', lazy='dynamic')
 
     def like_post(self, post):
         if not self.has_liked_post(post):
@@ -155,6 +168,15 @@ class User(UserMixin, db.Model):
         return CommentLike.query.filter(
             CommentLike.user_id == self.id,
             CommentLike.comment_id == comment.id).count() > 0
+
+
+
+
+
+
+
+
+
 
 
 
@@ -318,26 +340,27 @@ login_manager.anonymous_user = AnonymousUser
 
 @login_manager.user_loader
 def load_user(id):
-    return User.query.get(int(id))
+    return User.query.get(id)
 
 
 
 class Entry(db.Model):
     __tablename__ = 'entry'
+    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
-    # username = db.Column(db.String(80), nullable=False)
-    user_id = db.Column(db.Integer,db.ForeignKey('user.id', ondelete="CASCADE"),nullable=False)
-    billName = db.Column(db.String(80))
-    billCategory = db.Column(db.String(12))
+    username = db.Column(db.String(80), nullable=False,unique=True)
+    user_id = db.Column(db.Integer,db.ForeignKey('bills_app.user.id'))
+    billName = db.Column(db.String(80), nullable=False)
+    billCategory = db.Column(db.String(12), nullable=False)
     amount = db.Column(db.Integer)
-    dueDate = db.Column(db.DateTime(3))
-    dateOfAdd =  db.Column(db.String(120))
+    dueDate = db.Column(db.DateTime(3), nullable=False)
+    dateOfAdd =  db.Column(db.String(120), nullable=False)
     notificationReminder= db.Column(db.Integer)
-    answer = db.Column(db.String(12))
-    repeatDays = db.Column(db.String(20))
-    repeatTime = db.Column(db.String(20))
-    note = db.Column(db.String(20))
-    paidUnpaid= db.Column(db.String(30))
+    answer = db.Column(db.String(12), nullable=False)
+    repeatDays = db.Column(db.String(20), nullable=True)
+    repeatTime = db.Column(db.String(20), nullable=True)
+    note = db.Column(db.String(20), nullable=False)
+    paidUnpaid= db.Column(db.String(30), nullable=True)
 
 
     def __repr__(self):
@@ -348,15 +371,17 @@ class Entry(db.Model):
 
 class PostLike(db.Model):
     __tablename__ = 'post_like'
+    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"),nullable=False)
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id', ondelete="CASCADE"),nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('bills_app.posts.id'))
 
 class CommentLike(db.Model):
     __tablename__ = 'comment_like'
+    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"),nullable=False)
-    comment_id = db.Column(db.Integer, db.ForeignKey('comments.id', ondelete="CASCADE"),nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'))
+    comment_id = db.Column(db.Integer, db.ForeignKey('bills_app.comments.id'))
 
 
 
@@ -364,13 +389,13 @@ class CommentLike(db.Model):
 
 class Post(db.Model):
     __tablename__ = 'posts'
+    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text)
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    author_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"),nullable=False)
-    comments = db.relationship('Comment', backref='post', lazy='dynamic', passive_deletes=True )
-    posts_like = db.relationship('PostLike', backref='like', lazy='dynamic',passive_deletes=True)
+    author_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'))
+    comments = db.relationship('Comment', backref='post', lazy='dynamic')
 
 
     @staticmethod
@@ -389,15 +414,14 @@ db.event.listen(Post.body, 'set', Post.on_changed_body)
 
 class Comment(db.Model):
     __tablename__ = 'comments'
+    __table_args__ = {"schema":"bills_app"}
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text)
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     disabled = db.Column(db.Boolean)
-    author_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"),nullable=False)
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id', ondelete="CASCADE"),nullable=False)
-    comments_like = db.relationship('CommentLike', backref='like', lazy='dynamic',passive_deletes=True)
-
+    author_id = db.Column(db.Integer, db.ForeignKey('bills_app.user.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('bills_app.posts.id'))
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):
