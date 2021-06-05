@@ -83,9 +83,9 @@ def user(username):
 
 
     # For Chart
-    entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').all()
-    total_entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').count()
-    total=Entry.query.filter_by(user_id=current_user.id).count()
+    if current_user.is_authenticated:
+        entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').all()
+        total_entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').count()
 
 
     accommodation_entries=[]
@@ -462,9 +462,10 @@ def add():
 # Show Reminders Page
 @main.route("/show_reminders", methods=['GET', 'POST'])
 def show_reminders():
-    entry=Entry.query.filter_by(user_id=current_user.id).all()
-    total_unpaid=Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Unpaid').count()
-    total_paid=Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').count()
+    if current_user.is_authenticated:
+        entry=Entry.query.filter_by(user_id=current_user.id).all()
+        total_unpaid=Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Unpaid').count()
+        total_paid=Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').count()
     
     return render_template('show_reminders.html',entry=entry,total_unpaid=total_unpaid,total_paid=total_paid)
 
