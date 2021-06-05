@@ -62,8 +62,8 @@
             | <span class="label label-default">Follows you</span>
             {% endif %}
         </p>
-        <p>{% if user == current_user %}
-            <a class="btn btn-light" href="{{ url_for('auth.edit_profile') }}">Edit Profile</a>
+        <p style="margin-top: 3%;">{% if user == current_user %}
+            <a style="margin-right: 1%;" class="btn btn-light" href="{{ url_for('auth.edit_profile') }}">Edit Profile</a>
             {% endif %}
             {% if current_user.is_administrator() %}
             <a class="btn btn-danger" href="{{ url_for('auth.edit_profile_admin', id=user.id) }}">Edit Profile [Admin]</a>
