@@ -26,5 +26,7 @@ h2{
     border-radius: 25px;
     background: linear-gradient(45deg, rgba(9,21,122,1) 0%, rgba(44,190,191,1) 50%, rgba(131,5,168,1) 100%);
     border: none;
+    font-weight:bold;
+    box-shadow: 5px 5px 10px grey;
 }
 
