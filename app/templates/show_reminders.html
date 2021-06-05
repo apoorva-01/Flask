@@ -35,8 +35,8 @@
     <div class="tab-body">
       <div class="active">
         <h2>Upcoming Bills</h2>
-        <table class="table table-hover table-dark src-table">
-          <thead class="thead-dark">
+        <table class="table table-hover table-light src-table">
+          <thead class="thead-light">
             <tr>
               <th scope="col">Bill Name</th>
               <th scope="col">Bill Category</th>
@@ -70,8 +70,8 @@
 
       <div>
         <h2>Paid Bills</h2>
-        <table class="table table-hover table-dark src-table">
-          <thead class="thead-dark">
+        <table class="table table-hover table-light src-table">
+          <thead class="thead-light">
             <tr>
               <th scope="col">Bill Name</th>
               <th scope="col">Bill Category</th>
@@ -105,7 +105,7 @@
 {% else %}
 <div class="container" style="position: absolute;top: 30%;">
   <center>
-    <h2>Please log in to see all your Reminder's</h2>
+    <h2>Please log in to see all your Reminders</h2>
     <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
     <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
       up</a>
