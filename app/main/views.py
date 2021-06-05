@@ -461,7 +461,6 @@ def add():
 
 # Show Reminders Page
 @main.route("/show_reminders", methods=['GET', 'POST'])
-@login_required
 def show_reminders():
     entry=Entry.query.filter_by(user_id=current_user.id).all()
     total_unpaid=Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Unpaid').count()

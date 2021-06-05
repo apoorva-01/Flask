@@ -121,6 +121,19 @@
 
 
 
+{% else %}
+<div class="container" style="position: absolute;top: 15%;width: 50%;margin-left: 5%;">
+    <center>
+        <h2 style="padding:0;">Please Login </h2>
+        <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
+        <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
+            up</a>
+    </center>
+</div>
+{% endif %}
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
@@ -152,16 +165,7 @@
             })
 </script>
 
-{% else %}
-<div class="container" style="position: absolute;top: 15%;width: 50%;margin-left: 5%;">
-    <center>
-        <h2 style="padding:0;">Please Login </h2>
-        <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
-        <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
-            up</a>
-    </center>
-</div>
 
-{% endif %}
+
 
 {% endblock %}
