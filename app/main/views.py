@@ -88,99 +88,102 @@ def user(username):
         total_entries = Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').count()
 
 
-    accommodation_entries=[]
-    gifts_entries=[]
-    insurance_entries=[]
-    credit_entries=[]
-    electricity_entries=[]
-    tv_entries=[]
-    education_entries=[]
-    car_entries=[]
-    twowheeler_entries=[]
-    food_entries=[]
-    pet_entries=[]
-    sports_entries=[]
-    shopping_entries=[]
-    tax_entries=[]
-    vacation_entries=[]
-    investment_entries=[]
-    savings_entries=[]
-    child_entries=[]
-    other_entries=[]
-    medicare_entries=[]
-    for entry in entries:
-        if entry.billCategory=='Accomodation':
-            accommodation_entries.append(entry.amount)
-        if entry.billCategory=='Gifts':
-            gifts_entries.append(entry.amount)
-        if entry.billCategory=='Insurance':
-            insurance_entries.append(entry.amount)
-        if entry.billCategory=="Credit Cards":
-            credit_entries.append(entry.amount)
-        if entry.billCategory=='Electricity':
-            electricity_entries.append(entry.amount)
-        if entry.billCategory=='TV':
-            tv_entries.append(entry.amount)
-        if entry.billCategory=='Education':
-            education_entries.append(entry.amount)
-        if entry.billCategory=='Car':
-            car_entries.append(entry.amount)
-        if entry.billCategory=='Two wheeler':
-            twowheeler_entries.append(entry.amount)
-        if entry.billCategory=='Food':
-            food_entries.append(entry.amount)
-        if entry.billCategory=='Medicare':
-            medicare_entries.append(entry.amount)
-        if entry.billCategory=='Pets':
-            pet_entries.append(entry.amount)
-        if entry.billCategory=='Sports':
-            sports_entries.append(entry.amount)
-        if entry.billCategory=='Shopping':
-            shopping_entries.append(entry.amount)
-        if entry.billCategory=='Tax':
-            tax_entries.append(entry.amount)
-        if entry.billCategory=='Vacation':
-            vacation_entries.append(entry.amount)
-        if entry.billCategory=='Investment':
-            investment_entries.append(entry.amount)
-        if entry.billCategory=='Savings':
-            savings_entries.append(entry.amount)
-        if entry.billCategory=='Child Care':
-            child_entries.append(entry.amount)
-        if entry.billCategory=='Other':
-            other_entries.append(entry.amount)    
+        accommodation_entries=[]
+        gifts_entries=[]
+        insurance_entries=[]
+        credit_entries=[]
+        electricity_entries=[]
+        tv_entries=[]
+        education_entries=[]
+        car_entries=[]
+        twowheeler_entries=[]
+        food_entries=[]
+        pet_entries=[]
+        sports_entries=[]
+        shopping_entries=[]
+        tax_entries=[]
+        vacation_entries=[]
+        investment_entries=[]
+        savings_entries=[]
+        child_entries=[]
+        other_entries=[]
+        medicare_entries=[]
+        for entry in entries:
+            if entry.billCategory=='Accomodation':
+                accommodation_entries.append(entry.amount)
+            if entry.billCategory=='Gifts':
+                gifts_entries.append(entry.amount)
+            if entry.billCategory=='Insurance':
+                insurance_entries.append(entry.amount)
+            if entry.billCategory=="Credit Cards":
+                credit_entries.append(entry.amount)
+            if entry.billCategory=='Electricity':
+                electricity_entries.append(entry.amount)
+            if entry.billCategory=='TV':
+                tv_entries.append(entry.amount)
+            if entry.billCategory=='Education':
+                education_entries.append(entry.amount)
+            if entry.billCategory=='Car':
+                car_entries.append(entry.amount)
+            if entry.billCategory=='Two wheeler':
+                twowheeler_entries.append(entry.amount)
+            if entry.billCategory=='Food':
+                food_entries.append(entry.amount)
+            if entry.billCategory=='Medicare':
+                medicare_entries.append(entry.amount)
+            if entry.billCategory=='Pets':
+                pet_entries.append(entry.amount)
+            if entry.billCategory=='Sports':
+                sports_entries.append(entry.amount)
+            if entry.billCategory=='Shopping':
+                shopping_entries.append(entry.amount)
+            if entry.billCategory=='Tax':
+                tax_entries.append(entry.amount)
+            if entry.billCategory=='Vacation':
+                vacation_entries.append(entry.amount)
+            if entry.billCategory=='Investment':
+                investment_entries.append(entry.amount)
+            if entry.billCategory=='Savings':
+                savings_entries.append(entry.amount)
+            if entry.billCategory=='Child Care':
+                child_entries.append(entry.amount)
+            if entry.billCategory=='Other':
+                other_entries.append(entry.amount)    
 
 
 
 
-    accommodation_sum=sum(accommodation_entries)
-    gifts_sum=sum(gifts_entries)
-    insurance_sum=sum(insurance_entries)
-    credit_sum=sum(credit_entries)
-    electricity_sum=sum(electricity_entries)
-    tv_sum=sum(tv_entries)
-    education_sum=sum(education_entries)
-    car_sum=sum(car_entries)
-    twowheeler_sum=sum(twowheeler_entries)
-    food_sum=sum(food_entries)
-    pet_sum=sum(pet_entries)
-    sports_sum=sum(sports_entries)
-    shopping_sum=sum(shopping_entries)
-    tax_sum=sum(tax_entries)
-    vacation_sum=sum(vacation_entries)
-    investment_sum=sum(investment_entries)
-    savings_sum=sum(savings_entries)
-    child_sum=sum(child_entries)
-    other_sum=sum(other_entries)
-    medicare_sum=sum(medicare_entries)
+        accommodation_sum=sum(accommodation_entries)
+        gifts_sum=sum(gifts_entries)
+        insurance_sum=sum(insurance_entries)
+        credit_sum=sum(credit_entries)
+        electricity_sum=sum(electricity_entries)
+        tv_sum=sum(tv_entries)
+        education_sum=sum(education_entries)
+        car_sum=sum(car_entries)
+        twowheeler_sum=sum(twowheeler_entries)
+        food_sum=sum(food_entries)
+        pet_sum=sum(pet_entries)
+        sports_sum=sum(sports_entries)
+        shopping_sum=sum(shopping_entries)
+        tax_sum=sum(tax_entries)
+        vacation_sum=sum(vacation_entries)
+        investment_sum=sum(investment_entries)
+        savings_sum=sum(savings_entries)
+        child_sum=sum(child_entries)
+        other_sum=sum(other_entries)
+        medicare_sum=sum(medicare_entries)
 
 
-    return render_template('auth/user.html', user=user, posts=posts,pagination=pagination,accommodation_sum=accommodation_sum,
-    gifts_sum=gifts_sum,insurance_sum=insurance_sum,credit_sum=credit_sum,electricity_sum=electricity_sum,
-    tv_sum=tv_sum, education_sum=education_sum,car_sum=car_sum,twowheeler_sum=twowheeler_sum,
-    food_sum=food_sum,pet_sum=pet_sum,sports_sum=sports_sum,shopping_sum=shopping_sum,tax_sum=tax_sum,
-    vacation_sum=vacation_sum,investment_sum=investment_sum,savings_sum=savings_sum,child_sum=child_sum,
-    other_sum=other_sum,medicare_sum=medicare_sum,entries=entries,total_entries=total_entries)
+        return render_template('auth/user.html', user=user, posts=posts,pagination=pagination,accommodation_sum=accommodation_sum,
+        gifts_sum=gifts_sum,insurance_sum=insurance_sum,credit_sum=credit_sum,electricity_sum=electricity_sum,
+        tv_sum=tv_sum, education_sum=education_sum,car_sum=car_sum,twowheeler_sum=twowheeler_sum,
+        food_sum=food_sum,pet_sum=pet_sum,sports_sum=sports_sum,shopping_sum=shopping_sum,tax_sum=tax_sum,
+        vacation_sum=vacation_sum,investment_sum=investment_sum,savings_sum=savings_sum,child_sum=child_sum,
+        other_sum=other_sum,medicare_sum=medicare_sum,entries=entries,total_entries=total_entries)
+
+
+    return render_template('auth/user.html')
 
 
 # Post page
@@ -468,7 +471,8 @@ def show_reminders():
         total_unpaid=Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Unpaid').count()
         total_paid=Entry.query.filter_by(user_id=current_user.id,paidUnpaid='Paid').count()
     
-    return render_template('show_reminders.html',entry=entry,total_unpaid=total_unpaid,total_paid=total_paid)
+        return render_template('show_reminders.html',entry=entry,total_unpaid=total_unpaid,total_paid=total_paid)
+    return render_template('show_reminders.html')
 
 
 # Chart Page
