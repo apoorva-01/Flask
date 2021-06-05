@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
+{% block head %}
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/followers.css')}}">
 
+{% endblock %}
 {% block title %}Bills Reminder- {{ title }} {{ user.username }}{% endblock %}
 
 {% block body %}
 <div class="container">
     <div class="page-header container">
-        <h1>{{ title }} {{ user.username }}</h1>
+        <h2>{{ title }} {{ user.username }}</h2>
     </div>
     <table class="table table-hover followers">
-        <thead><tr><th>User</th>
+        <thead style="background: #04AA6D;color: white;"><tr><th>User</th>
                     <th>Since</th>
             </tr></thead>
         {% for follow in follows %}
@@ -35,7 +39,7 @@
     
         {% endfor %}
     </table>
-    <div class="pagination">
+    <div class="pagination justify-content-center">
         {{ macros.pagination_widget(pagination, endpoint, username = user.username) }}
     </div>
 </div>
