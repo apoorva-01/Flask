@@ -2,7 +2,7 @@
 {% import "_macros.html" as macros %}
 
 {% block body %}
-{% if current_user.authenticated() %}
+{% if current_user.is_authenticated %}
 <div class="jumbotron m-0 row ">
   
       
@@ -155,7 +155,7 @@
 {% else %}
 <div class="container" style="position: absolute;top: 15%;width: 50%;margin-left: 5%;">
     <center>
-        <h2 style="padding:0;">Please Login to add Bill Reminders</h2>
+        <h2 style="padding:0;">Please Login </h2>
         <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
         <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
             up</a>

@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block head %}
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+
+{% endblock %}
 {% block body %}
 {% from "_formhelpers.html" import render_field %}
 
