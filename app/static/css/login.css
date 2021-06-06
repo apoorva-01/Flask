@@ -5,7 +5,6 @@ body{
 .container{
     margin-top:100px;
     background: white;
-    border-radius: 5%;
     padding: 3% 0;
     text-align: center;
     box-shadow: 5px 5px 10px black;
@@ -23,10 +22,21 @@ h2{
 .login-button{
     padding: 2% 25%;
     margin: 4%;
-    border-radius: 25px;
     background: linear-gradient(45deg, rgba(9,21,122,1) 0%, rgba(44,190,191,1) 50%, rgba(131,5,168,1) 100%);
     border: none;
     font-weight:bold;
     box-shadow: 5px 5px 10px grey;
 }
 
+input[type=password],input[type=email]{
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    border-bottom: 2px solid grey;
+    outline: none;
+}
+
+input[type=password]:focus, input[type=email]:focus{
+    border-bottom: 2px solid black;
+    background-color: rgb(202, 202, 202);
+}
