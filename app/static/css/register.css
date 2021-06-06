@@ -1,11 +1,11 @@
 body{
     background-image: linear-gradient(45deg, rgba(9,21,122,1) 0%, rgba(44,190,191,1) 50%, rgba(131,5,168,1) 100%);
+    font-family: 'Ubuntu';
 }
 
 .container{
     margin-top: 100px;
     background: white;
-    border-radius: 5%;
     padding: 3% 0;
     text-align: center;
     box-shadow: 5px 5px 10px black;
@@ -24,8 +24,29 @@ h2{
 .register-button{
     padding: 2% 25%;
     margin: 4%;
-    border-radius: 25px;
     background: linear-gradient(45deg, rgba(9,21,122,1) 0%, rgba(44,190,191,1) 50%, rgba(131,5,168,1) 100%);
     border: none;
     box-shadow: 5px 5px 10px grey;
+}
+
+input[type=password],input[type=text]{
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    border-bottom: 2px solid grey;
+    outline: none;
+}
+
+input[type=password]:focus, input[type=text]:focus{
+    border-bottom: 2px solid black;
+    background-color: rgb(202, 202, 202);
+}
+
+input:focus, input.form-control:focus, button:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
