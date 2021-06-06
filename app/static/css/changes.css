@@ -3,7 +3,7 @@ body{
     font-family: 'Ubuntu';
 }
 
-.change-pass{
+.change-pass, .reset-pass{
     margin-top: 100px;
     background: white;
     padding: 3% 0;
@@ -12,11 +12,11 @@ body{
     margin-bottom: 4%;
 }
 
-h2{
+h1,h2{
     font-weight: bold;
 }
 
-.change-pass-form{
+.change-pass-form, .reset-pass-form{
     padding: 4% 8%;
     text-align: left;
 }
@@ -25,7 +25,7 @@ label{
     margin-bottom: 0;
 }
 
-input[type=password]{
+input[type=password],input[type=email],input[type=text]{
     width: 100%;
     padding: 6px 10px;
     border: none;
@@ -33,12 +33,12 @@ input[type=password]{
     outline: none;
 }
 
-input[type=password]:focus{
+input[type=password]:focus, input[type=email]:focus, input[type=text]:focus{
     border-bottom: 2px solid black;
     background-color: rgb(202, 202, 202);
 }
 
-.change-pass-btn{
+.change-pass-btn, .reset-pass-btn{
     padding: 2% 25%;
     margin: 4% 0;
     background: linear-gradient(45deg, rgba(9,21,122,1) 0%, rgba(44,190,191,1) 50%, rgba(131,5,168,1) 100%);
