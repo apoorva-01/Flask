@@ -39,6 +39,19 @@ body{
     color: white;
 }
 
+.ques-post{
+    padding: 4%;
+    background: white;
+    box-shadow: 5px 5px 10px lightblue;
+}
+
+.posts{
+    background: white;
+    padding: 1% 4%;
+    margin-top: 2%;
+    box-shadow: 5px 5px 10px lightblue;
+}
+
 /* search box and submit button Styling */
 input[type=text]{
     margin-right: 2%;
