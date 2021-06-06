@@ -7,9 +7,17 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/search_style.css')}}">
 
 {% endblock %}
+
 {% block body %}
 <!-- Write Posts -->
-<div class="pt-5">
+<div>
+  
+ <section id="welcome-section">
+    <div class="container-fluid " style="padding-top: 20vh;">
+        <h1 class="welcome-text animated slideInLeft">Set & Get</h1>
+        <h1 class="welcome-text2">Discussion forum</h1>
+    </div>
+</section>
 
 <!-- Search box with submit button -->
 <div class="container search-field">
@@ -21,48 +29,51 @@
 
 
 <div  class="container mb-2">
-<form method="POST">
+<form method="POST" class="ques-post">
   {% if current_user.can(Permission.WRITE) %}
-  <h3 class='text-success'>Any Questions on Personal Finance ?</h3>
+  <h2 class='text-danger'>Have Questions regarding Personal Finance ?</h2>
   {% import "bootstrap/wtf.html" as wtf %}
   <form class="form form-horizontal" method="post" role="form">
     {{ form.hidden_tag() }}
     {{ wtf.form_errors(form, hiddens="only") }}
   
     {{ wtf.form_field(form.body) }}
-    {{ wtf.form_field(form.submit, class="btn btn-danger") }}
+    <center>
+    {{ wtf.form_field(form.submit, class="btn btn-danger ques-btn") }}
+    </center>
   </form>
     {% endif %} 
   </form>
 </div>
 <hr>
 
-
+<center>
+<h1 class="comm-heading">DISCUSSION SECTION</h1> 
 <div class="container" >
   <ul class="nav nav-pills">
       <li class='nav-item'{% if not show_followed %} class="active"{% endif %}>
-        <a class="btn btn-primary "  href="{{ url_for('.show_all') }}">All</a>
+        <a class="btn btn-primary "  href="{{ url_for('.show_all') }}">All Comments</a>
       </li>
-      {% if current_user.is_authenticated %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {% if current_user.is_authenticated %}
       <li class='nav-item'{% if show_followed %} class="active"{% endif %}>
-        <a class="btn btn-primary "  href="{{ url_for('.show_followed') }}">Followed</a>
+        <a class="btn btn-primary "  href="{{ url_for('.show_followed') }}">Only Followed</a>
       </li>
       {% endif %}
   </ul>
 </div>
-
+</center>
 
 <!-- All  Posts -->
-<div class="container">
+<div class="container" style="margin-bottom: 4%;">
 {% include '_posts.html' %}
 
-<center>
+<center style="margin-top: 2%;">
 <!-- Pagination  -->
 {% if pagination %}
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% import "_macros.html" as macros %}
-<div class="pagination">{{ macros.pagination_widget(pagination, 'main.community') }}
+<div class="pagination justify-content-center">{{ macros.pagination_widget(pagination, 'main.community') }}
 </div>
 {% endif %}
 </div>
