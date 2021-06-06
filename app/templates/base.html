@@ -17,12 +17,12 @@
 </head>
 <body>
     <!-- navigation bar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark px-5 ">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse px-5" id="navbarTogglerDemo02">
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
             <ul class="navbar-nav nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="{{url_for('main.home')}}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{url_for('main.community')}}">Community</a></li>
@@ -38,14 +38,14 @@
                 {% endif %}
 
                 {% if current_user.is_authenticated %}
-                <li class=" nav-item dropdown">
+                <li class=" nav-item dropdown" style="width: 80px;">
                     <a class="nav-link  dropdown-toggle" href="{{ url_for('main.user', username=current_user.username) }}" 
                      data-toggle="dropdown">
                         <img src="{{ current_user.gravatar(size=18) }}">
                       <b class="caret"></b>
                     </a>
 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="{{ url_for('auth.change_password') }}">Change Password</a>
                       <a class="dropdown-item" href="{{ url_for('auth.change_email_request') }}">Change Email</a>
                       <a class="dropdown-item" href="{{ url_for('auth.logout') }}">Log Out</a>
