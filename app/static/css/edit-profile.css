@@ -1,0 +1,46 @@
+body{
+    background-image: linear-gradient(45deg, rgba(9,21,122,1) 0%, rgba(44,190,191,1) 50%, rgba(131,5,168,1) 100%);
+    font-family: 'Ubuntu';
+}
+
+.container{
+    margin-top: 100px;
+    background: white;
+    padding: 3% 0;
+    box-shadow: 5px 5px 10px black;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+h1{
+    font-weight: bold;
+}
+
+.edit-profile-form{
+    padding: 0 8%;
+    text-align: left;
+    font-weight: bold;
+}
+
+input[type=file] {
+    color: white;
+    display: inline-block;
+    background: #1CB6E0;
+    border: none;
+    padding: 7px 15px;
+    font-weight: 700;
+    border-radius: 3px;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 10pt;
+}
+
+label{
+    width:100%;
+}
+
+.edit-profile-btn{
+    padding: 2% 10%;
+    margin: 0 1%;
+}
+
