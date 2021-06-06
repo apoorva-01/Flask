@@ -17,7 +17,7 @@ class Config:
     BILL_ADMIN ='main.hu.demo@gmail.com'
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    
+    uuuuuuuuuuuuuuuuuu
     POSTS_PER_PAGE = 9
     FLASKY_FOLLOWERS_PER_PAGE = 50
     FLASKY_COMMENTS_PER_PAGE=9

@@ -3,7 +3,12 @@
 {% block body %}
 <div style="margin-top:100px" class="page-header container">
     <h1 class="change_form_heading">Change Your Email Address</h1>
-
-    {{ wtf.quick_form(form) }}
+    <form class="form form-horizontal" method="post" role="form">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+        {{ wtf.form_field(form.email, class="") }}
+        {{ wtf.form_field(form.password, class="") }}
+        {{ wtf.form_field(form.submit, class="btn btn-success") }}
+      </form>
 </div>
 {% endblock %}
