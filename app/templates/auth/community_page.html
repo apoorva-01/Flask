@@ -51,11 +51,11 @@
 <div class="container" >
   <ul class="nav nav-pills">
       <li class='nav-item'{% if not show_followed %} class="active"{% endif %}>
-        <a class="btn btn-primary "  href="{{ url_for('.show_all') }}">All Comments</a>
+        <a class="btn btn-light "  href="{{ url_for('.show_all') }}">All Comments</a>
       </li>
       {% if current_user.is_authenticated %}
       <li class='nav-item'{% if show_followed %} class="active"{% endif %}>
-        <a class="btn btn-primary "  href="{{ url_for('.show_followed') }}">Only Followed</a>
+        <a class="btn btn-light "  href="{{ url_for('.show_followed') }}">Only Followed</a>
       </li>
       {% endif %}
   </ul>
