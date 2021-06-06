@@ -29,21 +29,21 @@
 
 
 <div  class="container mb-2" style="margin-top:4%;">
-<form method="POST" class="ques-post">
-  {% if current_user.can(Permission.WRITE) %}
-  <h2 class='text-danger'>Have Questions regarding Personal Finance ?</h2>
-  {% import "bootstrap/wtf.html" as wtf %}
-  <form class="form form-horizontal" method="post" role="form">
-    {{ form.hidden_tag() }}
-    {{ wtf.form_errors(form, hiddens="only") }}
-  
-    {{ wtf.form_field(form.body) }}
-    <center>
-    {{ wtf.form_field(form.submit, class="btn btn-danger ques-btn") }}
-    </center>
-  </form>
-    {% endif %} 
-  </form>
+{% if current_user.can(Permission.WRITE) %}
+  <form method="POST" class="ques-post">
+    <h2 class='text-danger'>Have Questions regarding Personal Finance ?</h2>
+    {% import "bootstrap/wtf.html" as wtf %}
+    <form class="form form-horizontal" method="post" role="form">
+      {{ form.hidden_tag() }}
+      {{ wtf.form_errors(form, hiddens="only") }}
+
+      {{ wtf.form_field(form.body) }}
+      <center>
+      {{ wtf.form_field(form.submit, class="btn btn-danger ques-btn") }}
+      </center>
+    </form>
+   </form>
+{% endif %} 
 </div>
 
 <center>
