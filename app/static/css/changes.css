@@ -3,7 +3,7 @@ body{
     font-family: 'Ubuntu';
 }
 
-.change-pass, .reset-pass{
+.change-pass, .reset-pass, .change-email{
     margin-top: 100px;
     background: white;
     padding: 3% 0;
@@ -16,7 +16,7 @@ h1,h2{
     font-weight: bold;
 }
 
-.change-pass-form, .reset-pass-form{
+.change-pass-form, .reset-pass-form, .change-email-form{
     padding: 4% 8%;
     text-align: left;
 }
@@ -38,7 +38,7 @@ input[type=password]:focus, input[type=email]:focus, input[type=text]:focus{
     background-color: rgb(202, 202, 202);
 }
 
-.change-pass-btn, .reset-pass-btn{
+.change-pass-btn, .reset-pass-btn, .change-email-btn{
     padding: 2% 25%;
     margin: 4% 0;
     background: linear-gradient(45deg, rgba(9,21,122,1) 0%, rgba(44,190,191,1) 50%, rgba(131,5,168,1) 100%);
