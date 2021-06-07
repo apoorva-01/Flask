@@ -54,7 +54,7 @@
             {% endif %}
 
         <!-- No of Followers and Folloing -->
-            <a  class="user-anchor" href="{{ url_for('.followers', username=user.username) }}">
+            <a  style="margin-right:2%" class="user-anchor" href="{{ url_for('.followers', username=user.username) }}">
                 Followers: <span  class="badge  badge-pill badge-light">{{ user.followers.count()  }}</span></a>
             <a  class="user-anchor" href="{{ url_for('.followed_by', username=user.username) }}">
                 Following: <span  class="badge  badge-pill badge-light">{{ user.followed.count() }}</span></a>
