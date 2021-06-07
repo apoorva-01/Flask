@@ -105,7 +105,7 @@
 {% else %}
 <div class="container" style="position: absolute;top: 10%;left: 20%;">
   <center>
-    <h2 style="font-weight: bold;padding:0;">Please log in to see all your Reminders</h2>
+    <h2 style="font-weight: bold;padding:0;font-family:'Ubuntu';">Please log in to see all your Reminders</h2>
     <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
     <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
       up</a>
