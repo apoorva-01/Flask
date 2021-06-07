@@ -8,11 +8,11 @@ body{
     background: white;
     padding: 4%;
     box-shadow: 2px 2px 10px;
+    margin-bottom: 4%;
 }
 
-h1{
+h1,h2,h3{
     text-align: center;
-    text-transform: uppercase;
     font-weight: bold;
 }
 
@@ -24,4 +24,12 @@ h1{
 .submit-btn{
     width: 48%;
     margin: 1%;
+}
+
+label{
+    margin-right: 4%;
+}
+
+.comment-btn{
+    width: 40%;
 }
