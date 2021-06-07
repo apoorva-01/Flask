@@ -19,7 +19,7 @@ body{
   }
   .nav-link {
     font-size: 1.2rem;
-    font-family: "roboto";
+    font-family: 'Ubuntu';
   }
 
 .navbar-fixed-top.scrolled {
