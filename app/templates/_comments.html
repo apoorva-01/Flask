@@ -57,18 +57,18 @@
 
 
             <div>
-                <p style="margin-bottom: 0;">{{comment_upvote}} Upvotes</p>
+                <p style="margin-bottom: 0;">{{comment_upvote}} Upvotes
+
+                    {% if current_user.is_authenticated %}
+                    {% if current_user.has_liked_comment(comment) %}
+                    <a style="margin-left: 2%;" href="{{ url_for('main.like_comment_action', comment_id=comment.id, action='unlike') }}"><i class="fas fa-thumbs-up"></i></a>
+                    {% else %}
+                    <a style="margin-left: 2%;" href="{{ url_for('main.like_comment_action', comment_id=comment.id, action='like') }}"><i class="far fa-thumbs-up"></i></a>
+                     {% endif %}
+                     {% endif %}
+
+                </p>
             </div>
-
-            {% if current_user.is_authenticated %}
-            {% if current_user.has_liked_comment(comment) %}
-            <a style="margin-left: 2%;" href="{{ url_for('main.like_comment_action', comment_id=comment.id, action='unlike') }}"><i class="fas fa-thumbs-up"></i></a>
-            {% else %}
-            <a style="margin-left: 2%;" href="{{ url_for('main.like_comment_action', comment_id=comment.id, action='like') }}"><i class="far fa-thumbs-up"></i></a>
-             {% endif %}
-             {% endif %}
-
-
 
            
             {% if moderate %}
