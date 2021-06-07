@@ -1,14 +1,21 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
+{% block head %}
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/edit-profile.css')}}">
+
+{% endblock %}
+
 {% block title %}Bills Reminder- Edit Profile{% endblock %}
 
 {% block body %}
-<div style="margin-top:100px;margin-left:50px"class="page-header">
+<div class="container col-lg-6 col-md-6 col-sm-12"> 
+<div class="page-header">
     <h1>Edit Your Profile</h1>
 </div>
-<div style="margin-left:50px" class="col-md-4">
-    <form class="form form-horizontal" method="post" role="form">
+<div>
+    <form class="form form-horizontal edit-profile-form" method="post" role="form">
         {{ form.hidden_tag() }}
         {{ wtf.form_errors(form, hiddens="only") }}
       
@@ -21,11 +28,15 @@
         {{ wtf.form_field(form.about_me) }}
         {{ wtf.form_field(form.designation) }}
         {{ wtf.form_field(form.photo) }}
-        {{ wtf.form_field(form.submit, class="btn btn-success") }}
-        {{ wtf.form_field(form.delete, class="btn btn-danger") }}
+        <center style="margin-top: 6%;">
+        {{ wtf.form_field(form.submit, class="btn btn-success edit-profile-btn") }}
+            <p style="margin-top: 4%;"> Want to delete your profile?</p>
+            <p>click the button given below</p>
+        {{ wtf.form_field(form.delete, class="btn btn-danger edit-profile-btn") }}
+        </center>
       </form>
 </div>
-
+</div>
 
 
 {% endblock %}
