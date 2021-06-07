@@ -1,6 +1,6 @@
 <ul class="comments">
     {% for comment in comments %}
-    <li class="comment" style="margin-left: 0;padding: 3%;>
+    <li class="comment" style="margin-left: 0;padding: 3%;">
         <div class="comment-thumbnail">
             <a href="{{ url_for('.user', username=comment.author.username) }}">
 
