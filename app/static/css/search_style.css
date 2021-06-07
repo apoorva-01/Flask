@@ -32,11 +32,12 @@ body{
     width: 30%;
 }
 
-.comm-heading{
-    background-image: linear-gradient(45deg, rgb(79 9 122) 0%, rgb(44 69 191) 50%, rgba(131,5,168,1) 100%);
-    padding: 2%;
-    margin: 4% 0;
-    color: white;
+.hr{
+   margin-top: 4%;
+   border: none;
+   border-top: 15px dashed white;
+   height:1px;
+   width: 10%;
 }
 
 .ques-post{
