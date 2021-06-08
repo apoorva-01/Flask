@@ -73,12 +73,12 @@
 
         <!-- Repeat and Don't Repeat Radio Button Option -->
         <label for="radio_1 radio-text">
-            <input type="radio" name="answer" name='repeat' class="radio-button" value="yes">
+            <input type="radio" name="answer" name='repeat' class="radio-button" value="repeat">
             Repeat
         </label>
         <label for="radio_2 radio-text">
             <input type="radio" name="answer" name='dont_repeat' checked="checked" class="radio-button"
-                value="no">
+                value="don'tRepeat">
             Don't Repeat
         </label>
 
@@ -140,7 +140,7 @@
 <script>
 $(document).ready(function() {
     $("input[type='radio']").change(function() {
-        if ($(this).val() == "yes") {
+        if ($(this).val() === "repeat") {
             $("#ifYes").show(800);
         } else {
             $("#ifYes").hide(800);
