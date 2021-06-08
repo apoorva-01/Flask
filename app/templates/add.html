@@ -131,6 +131,10 @@
 {% endif %}
 
 
+{% block scripts %}
+{{ pagedown.include_pagedown() }}
+{% endblock %}
+
 <!-- Repeat Radio Button Jquery Link -->
 <script src="{{ url_for('static', filename='js/addjs.js') }}" charset="utf-8"></script>
 
