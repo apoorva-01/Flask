@@ -57,6 +57,6 @@ body{
   }
   @media (max-width: 425px){
     .nav-link {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
   }
