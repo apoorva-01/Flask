@@ -45,7 +45,7 @@ body{
     }
   }
   @media (max-width: 990px){
-    .nav-link {
+    .navbar-dark .navbar-nav .nav-link {
         font-size: 2rem;
     }
     .navbar {
@@ -56,12 +56,12 @@ body{
     }
   }
   @media (max-width: 425px){
-    .nav-link {
+    .navbar-dark .navbar-nav .nav-link{
         font-size: 4rem;
     }
   }
   @media (max-width: 320px){
-    .nav-link {
+    .navbar-dark .navbar-nav .nav-link {
         font-size: 4.5rem;
     }
   }
