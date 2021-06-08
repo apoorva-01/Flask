@@ -3,7 +3,7 @@ body{
 }
 
 #welcome-section{
-    background: linear-gradient(rgba(12, 5, 24, 0.438),rgba(12, 5, 24, 0.438)),url('../img/community-pic.jpg');
+    background: linear-gradient(rgba(12, 5, 24, 0.438),rgba(12, 5, 24, 0.438)),url('../img/community-pic.jpeg');
     background-size: cover;
     background-position: center;
     height: 60vh;
