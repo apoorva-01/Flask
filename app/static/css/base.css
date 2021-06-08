@@ -21,15 +21,12 @@ body{
     font-size: 1.2rem;
     font-family: 'Ubuntu';
   }
-
-.navbar-fixed-top.scrolled {
-  background-color: #000 !important;
-  transition: background-color 200ms linear;
-}
-
-.navbar-fixed-top.scrolled .nav-link {
-  color:#fff;
-}
+  .navbar-nav{
+    margin-right:1%;
+  }
+  .dropdown{
+    width: 80px;
+  }
 
   /* Media query (Responsive for phones) */
   @media (max-width: 1100px){
@@ -37,24 +34,20 @@ body{
     .navbar {
       padding: 1.5rem 0 1.5rem 1rem;
       background-color: rgba(3, 1, 1, 0.897);
+    }
+    .nav-item {
+        padding:1%;
+    }
+    .nav-link {
+        font-size: 1rem;
+    }
+    .navbar-nav{
+        width: 100%;
+    }
   }
-  .nav-item {
-    padding:1%;
+  @media (max-width: 990px){
+    .nav-link {
+        font-size: 2rem;
+    }
   }
-  .nav-link {
-      font-size: 2rem;
-      font-family: "Montserrat-Light";
-  }
-
-  }
-  
-
-
-
-
-
-
-
-
-
   
