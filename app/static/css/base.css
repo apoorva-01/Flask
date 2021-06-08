@@ -57,11 +57,14 @@ body{
   }
   @media (max-width: 425px){
     .nav-link {
-        font-size: 3rem;
+        font-size: 4rem;
+    }
+     .navbar {
+        padding: 2rem 0 2rem 1.5rem;
     }
   }
   @media (max-width: 320px){
     .nav-link {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
     }
   }
