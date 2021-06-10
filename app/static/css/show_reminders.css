@@ -141,6 +141,9 @@ p {
   }
   .tabs .tab-header {
     display: inline;
+    height: 70px;
+    width: auto;
+    display: block;
   }
   .tabs .tab-header > div {
     padding: 0 4%;
