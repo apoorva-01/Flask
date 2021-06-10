@@ -47,7 +47,7 @@
                 
             </div>
             
-            <div class="container btn-con" style="width: 100%;">
+            <div class="container" style="width: 100%;display: flex;">
             
                 <a  class="btn btn-primary" href="{{ url_for('.post', id=post.id) }}" style="margin-left: auto;">
                     <span class="label label-default post-button">See Post</span>
@@ -61,7 +61,7 @@
                 </a>
                 {% elif current_user.is_administrator() %}
                 <a  class="btn btn-danger" href="{{ url_for('.edit', id=post.id) }}">
-                    <span class="label label-danger post-button">Edit [Admin]</span>
+                    <span class="label label-danger post-button">Edit[Ad]</span>
                 </a>
                 {% endif %}
             </div>
