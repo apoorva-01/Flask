@@ -133,7 +133,7 @@ label {
 
     /* Form Container */
     .add-item{
-        margin-top: 10%;
+        margin-top: 15%;
         margin-left: 5%;
         padding: 0 0;
     }
@@ -168,12 +168,22 @@ label {
     /* Bill Category and Send notification on input fields */
     /* Additional Repetition-Option field for Repeat option */
     /* Note textarea input field */
-    #Bill-Category, #Notification-Reminder, #Repetition-Reminder,#note-field{
+    #Bill-Category, #Notification-Reminder, #Repetition-Reminder{
         width: 95%;
         height:8%;
         padding: 16px 32px;
         margin: 10px 5px;
         display: inline-block;
+        border: 1px solid rgba(92, 84, 84, 0.712);
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+    #note-field{
+        width: 95%;
+        height:8%;
+        padding: 16px 32px;
+        margin: 10px 5px;
+        display: flex;
         border: 1px solid rgba(92, 84, 84, 0.712);
         box-sizing: border-box;
         font-size: 1rem;
@@ -203,8 +213,5 @@ label {
         border-radius: 7px;
         margin: 2% 0 2% 8%;
         font-size: 1rem;
-    }
-    label {
-        float:none;
     }
 }
