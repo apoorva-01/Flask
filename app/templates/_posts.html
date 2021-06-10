@@ -57,7 +57,7 @@
                     <span class="label label-danger post-button">Edit [Admin]</span>
                 </a>
                 {% endif %}
-                <a  class="btn btn-primary" href="{{ url_for('.post', id=post.id) }}">
+                <a  class="btn btn-primary" href="{{ url_for('.post', id=post.id) }}" style="margin-left: auto;">
                     <span class="label label-default post-button">See Post</span>
                 </a>
                 <a class="btn btn-primary" href="{{ url_for('.post', id=post.id) }}#comments">
