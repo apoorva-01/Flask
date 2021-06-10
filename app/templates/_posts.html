@@ -45,12 +45,15 @@
                 
                 </p>
                 
-                {% if current_user == post.author %}
-                <a  class="btn btn-danger" href="{{ url_for('.edit', id=post.id) }}">
+            </div>
+            
+            <div class="container" style="display: flex;width: 100%;">
+            {% if current_user == post.author %}
+                <a  class="btn btn-danger" href="{{ url_for('.edit', id=post.id) }}" style="margin-left: auto;">
                     <span class="label label-primary">Edit</span>
                 </a>
                 {% elif current_user.is_administrator() %}
-                <a  class="btn btn-danger" href="{{ url_for('.edit', id=post.id) }}">
+                <a  class="btn btn-danger" href="{{ url_for('.edit', id=post.id) }}" style="margin-left: auto;">
                     <span class="label label-danger post-button">Edit [Admin]</span>
                 </a>
                 {% endif %}
