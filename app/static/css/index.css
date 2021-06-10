@@ -11,6 +11,10 @@ h5{
     letter-spacing: 0.2em;
 }
 
+.container{
+    margin-top: 15%;
+}
+
 /* Bill Reminder heading */
 .first-animation{
     font-family: "Ubuntu";
@@ -34,7 +38,15 @@ h5{
     letter-spacing: 0.1em;
 }
 
-@media (max-width: 491px) {
+@media (min-width: 761px) and (max-width: 840px){
+    .container{
+        top-margin: 20%;
+    }
+    .first-animation{
+        font-size: 50px;
+    }
+}
+@media (min-width: 361px) and (max-width: 491px) {
     h5{
         padding-top: 40%;
         font-size: 1.5rem;
@@ -42,7 +54,7 @@ h5{
 
     /* Bill Reminder heading */
     .first-animation{
-        font-size: 3rem;
+        font-size: 50px;
         padding-top: 5%;
     }
 
@@ -52,3 +64,8 @@ h5{
         font-size: 1rem;
     }
   }
+@media (max-width: 360px){
+    .first-animation{
+        font-size: 45px;
+    }
+}
