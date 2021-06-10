@@ -76,7 +76,11 @@
 {% if (total_entries!=0) %}
 <div class="container" style="margin-top:7%;">
   <h1 style="text-align: center;">Expenditure</h1>
-  <canvas id="doughnut-chart" width=3% ></canvas>
+  <div class="card">
+    <div class="card-body" style="height: 400px;">
+        <canvas id="doughnut-chart"></canvas>
+    </div>
+  </div>
 </div>
 {% endif %}
 {% endif %}
@@ -167,6 +171,10 @@
                     },
                 },
             ],
+            },
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false
             }
             })
 </script>
