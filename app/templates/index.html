@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 {% endblock %}
 {% block body %}
-<center>
+<div class="container col-lg-6 col-md-6 col-sm-12">
   <!-- Welcome to and Bill Reminder Heading -->
   {% if current_user.is_authenticated %}
   <h5 class="second-animation">Welcome, {{current_user.name}}</h5>
@@ -26,7 +26,7 @@
     {% else %}
     <a class='btn btn-primary' href="{{url_for('auth.login')}}">Login</a>
     {% endif %} -->
-</center>
+</div>
 
 
 {% block scripts %}
