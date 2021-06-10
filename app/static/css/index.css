@@ -12,7 +12,7 @@ h5{
 }
 
 .container{
-    margin-top: 15%;
+    margin-top: 12%;
 }
 
 /* Bill Reminder heading */
@@ -45,8 +45,16 @@ h5{
     .first-animation{
         font-size: 50px;
     }
+    .container{
+        margin-top: 20%;
+    }
 }
-@media (min-width: 361px) and (max-width: 491px) {
+@media (min-width: 491px) and (max-width: 760px){
+    .container{
+        margin-top: 25%;
+    }
+}
+@media (min-width: 361px) and (max-width: 490px) {
     h5{
         padding-top: 40%;
         font-size: 1.5rem;
@@ -63,9 +71,15 @@ h5{
         margin-top: 5%;
         font-size: 1rem;
     }
+    .container{
+        margin-top: 25%;
+    }
   }
 @media (max-width: 360px){
     .first-animation{
         font-size: 45px;
+    }
+    .container{
+        margin-top: 25%;
     }
 }
