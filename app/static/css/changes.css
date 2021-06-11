@@ -46,3 +46,8 @@ input[type=password]:focus, input[type=email]:focus, input[type=text]:focus{
     box-shadow: 5px 5px 10px grey;
     width: 100%;
 }
+@media (max-width: 1234px){
+    .reset-heading{
+        font-size: 2rem;
+    }
+}
