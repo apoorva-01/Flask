@@ -49,18 +49,18 @@
             
             <div class="container" style="width: 100%;display: flex;margin-bottom: 15px;">
             
-                <a  class="btn btn-primary" href="{{ url_for('.post', id=post.id) }}" style="margin-left: auto;">
+                <a  class="btn btn-primary post-btn" href="{{ url_for('.post', id=post.id) }}" style="margin-left: auto;">
                     <span class="label label-default post-button">See Post</span>
                 </a>
-                <a class="btn btn-primary" href="{{ url_for('.post', id=post.id) }}#comments">
+                <a class="btn btn-primary post-btn" href="{{ url_for('.post', id=post.id) }}#comments">
                     <span class="label label-primary post-button">{{ post.comments.count() }} Answers</span>
                 </a>
                 {% if current_user == post.author %}
-                <a  class="btn btn-danger" href="{{ url_for('.edit', id=post.id) }}">
+                <a  class="btn btn-danger post-btn" href="{{ url_for('.edit', id=post.id) }}">
                     <span class="label label-primary">Edit</span>
                 </a>
                 {% elif current_user.is_administrator() %}
-                <a  class="btn btn-danger" href="{{ url_for('.edit', id=post.id) }}">
+                <a  class="btn btn-danger post-btn" href="{{ url_for('.edit', id=post.id) }}">
                     <span class="label label-danger post-button">Edit[Ad]</span>
                 </a>
                 {% endif %}
