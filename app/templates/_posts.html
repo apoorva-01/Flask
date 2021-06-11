@@ -33,7 +33,7 @@
 
             <div class="post-footer">
                 
-                <p style="margin: 1%;float: left;vertical-align: bottom;">{{post_upvote}} Upvotes
+                <p style="margin: 1%;float: left;vertical-align: bottom;margin-bottom: 8px;">{{post_upvote}} Upvotes
 
                 {% if current_user.is_authenticated %}
                 {% if current_user.has_liked_post(post) %}
@@ -47,7 +47,7 @@
                 
             </div>
             
-            <div class="container" style="width: 100%;display: flex;">
+            <div class="container" style="width: 100%;display: flex;margin-bottom: 15px;">
             
                 <a  class="btn btn-primary" href="{{ url_for('.post', id=post.id) }}" style="margin-left: auto;">
                     <span class="label label-default post-button">See Post</span>
