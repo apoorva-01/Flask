@@ -3,6 +3,10 @@ body{
     background: #8c96de;
 }
 
+.btn{
+    border: 2px solid white;
+}
+
 .main-con{
     margin-top: 100px;
     background: white;
