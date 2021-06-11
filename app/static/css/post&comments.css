@@ -37,3 +37,21 @@ label{
 .post-btn{
     border: 2px solid white;
 }
+@media (min-width: 760px) and (max-width: 870px){
+    .delete-btn{
+        margin-right: 0;
+    }
+
+    .submit-btn{
+        margin-left: 0;
+    }
+}
+@media (max-width: 400px){
+    .delete-btn{
+        margin-right: 0;
+    }
+
+    .submit-btn{
+        margin-left: 0;
+    }
+}
