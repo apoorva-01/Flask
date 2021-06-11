@@ -106,8 +106,8 @@ p {
   color: #fff;
 }
 .show-con{
-  margin-top: 15%;
-  margin-left: 10%;
+  margin-top: 6%;
+  margin-left: 18%;
 }
 
 .show-unauth{
@@ -181,5 +181,18 @@ p {
   .tabs .tab-body {
     margin-top: 3%;
     width: 100%;
+  }
+  .show-con{
+    margin-top: 15%;
+    margin-left: 18%;
+  }
+}
+@media (max-width: 440px){
+  .show-unauth{
+    font-size: 1.5rem;
+  }
+  .show-con{
+    margin-top: 25%;
+    margin-left: 18%;
   }
 }
