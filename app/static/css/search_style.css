@@ -1,19 +1,9 @@
 body{
-/*     background: #8c96de; */
-     background: linear-gradient(rgba(12, 5, 24, 0.438),rgba(12, 5, 24, 0.438)),url('../img/community-pic2.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    object-fit: cover;
-}
-
-/* #welcome-section{
     background: linear-gradient(rgba(12, 5, 24, 0.438),rgba(12, 5, 24, 0.438)),url('../img/community-pic2.jpg');
     background-size: cover;
     background-position: center;
-    height: 60vh;
-    object-fit: cover;
-} */
+    height: 100vh;
+}
 
 .welcome-text, .welcome-text2{
     font-size: 48px;
