@@ -51,6 +51,10 @@ body{
     box-shadow: 2px 2px 10px;
 }
 
+.post-btn{
+    border: 2px solid white;
+}
+
 /* search box and submit button Styling */
 input[type=text]{
     margin-right: 2%;
