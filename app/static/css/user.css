@@ -28,6 +28,10 @@ table{
     padding-left: 10%;
 }
 
+.post-btn{
+    border: 2px solid white;
+}
+
 @media (min-width: 376px) and (max-width: 425px){
     .profile-container{
         padding-left: 15%;
