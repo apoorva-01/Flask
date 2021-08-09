@@ -23,7 +23,7 @@ body{
   .navbar-dark .navbar-nav .nav-link {
     font-size: 1.2rem;
     font-family: 'Ubuntu';
-    color: #080808;
+    color: #000;
   }
   .navbar-nav{
     margin-right:1%;
