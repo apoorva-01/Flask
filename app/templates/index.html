@@ -7,29 +7,137 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 {% endblock %}
 {% block body %}
-<div class="container col-lg-6 col-md-6 col-sm-12">
-  <center>
+<!--<div class="container col-lg-6 col-md-6 col-sm-12">
+  <center>-->
   <!-- Welcome to and Bill Reminder Heading -->
-  {% if current_user.is_authenticated %}
+  <!--{% if current_user.is_authenticated %}
   <h5 class="second-animation">Welcome, {{current_user.name}}</h5>
   {% else %}
   <h5 class="second-animation">Welcome</h5>
   {% endif %}
-  <h2 class="first-animation">Set & Get</h2>
+  <h2 class="first-animation">Set & Get</h2>-->
 
   <!-- Add Reminder Button -->
-  <a class="btn btn-outline-light" href="{{url_for('main.add')}}" role="button">
+  <!--<a class="btn btn-outline-light" href="{{url_for('main.add')}}" role="button">
     <i class="fas fa-plus-circle"></i> Add Reminder</a>
-  <br>
+  <br>-->
 
   <!-- {% if current_user.is_authenticated %}
     <a class='btn btn-primary' href="{{url_for('auth.logout')}}">Logout</a>
     {% else %}
     <a class='btn btn-primary' href="{{url_for('auth.login')}}">Login</a>
     {% endif %} -->
-  </center>
-</div>
+  <!--</center>
+</div>-->
+<div class="container-fluid grey-container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="hero-content"> 
+                    <h1 class="_mg-t-md" >You Set, <br> We Remind.</h1> 
+                    <h6>
+                        Easy access to setting daily or weekly reminders as per your schedule. Receive reminders via email for convenience. A platform keeping check on your daily/weekly/monthly expenditures and creating a statistics for the same. Receive financial advice and interact with other people on the community built platform.
+                    </h6> 
+                    <button id="get-started-btn" class="started-button" href="#">Get Started - It's Free!</button>
+                    <button id="get-started-btn" class="guide-button" href="#">Helpguide to Set&Get</button>  
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="image-div">
+                    <img src="home3.png" class="home-image"alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <section class="home-section"> 
+        <div style="width: 70%;">  
+            <h2>Get more done with smart reminders</h2> 
+            <p style="font-weight: bold;">
+                Keep track of your to-do’s with reminders. Set a one time, recurring or location reminders with a few taps. Works with Amazon Alexa, Google Assistant and Siri, too!
+            </p> 
+        </div> 
+    </section>
+
+
+    <div class="container-fluid grey-container" >
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="grid_1-2 grid_1-sm" style="width: 100%;height: 100%;"> 
+                    <h4>RELEVANT</h4> 
+                    <h2>Simplify your life</h2> 
+                    <p>
+                        Use Any.do’s location-based reminders to amplify your productivity and make life easier. Remind yourself of the gate code upon arrival to a friend’s house, remember to silent your phone right before entering the theater and get your grocery list exactly as you enter the supermarket’s doors.
+                    </p> 
+                </div> 
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="image-div"> 
+                    <img src="home2.png" class="home-image" alt=""> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="image-div"> 
+                    <img src="home.png" class="home-image" alt="">  
+                </div>   
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="grid_1-2 grid_1-sm" style="width: 90%;"> 
+                    <h4>RELEVANT</h4> 
+                    <h2>Simplify your life</h2> 
+                    <p>
+                        Use Any.do’s location-based reminders to amplify your productivity and make life easier. Remind yourself of the gate code upon arrival to a friend’s house, remember to silent your phone right before entering the theater and get your grocery list exactly as you enter the supermarket’s doors.
+                    </p> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid grey-container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="grid_1-2 grid_1-sm"style="width: 100%;"> 
+                    <h4>RELEVANT</h4> 
+                    <h2>Simplify your life</h2> 
+                    <p>
+                        Use Any.do’s location-based reminders to amplify your productivity and make life easier. Remind yourself of the gate code upon arrival to a friend’s house, remember to silent your phone right before entering the theater and get your grocery list exactly as you enter the supermarket’s doors.
+                    </p> 
+                </div> 
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="image-div"> 
+                    <img src="discussion.png" class="home-image" alt=""> 
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="image-div"> 
+                    <img src="add5.png" class="home-image" alt="">  
+                </div>   
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="grid_1-2 grid_1-sm" style="width: 90%;"> 
+                    <h4>RELEVANT</h4> 
+                    <h2>Simplify your life</h2> 
+                    <p>
+                        Use Any.do’s location-based reminders to amplify your productivity and make life easier. Remind yourself of the gate code upon arrival to a friend’s house, remember to silent your phone right before entering the theater and get your grocery list exactly as you enter the supermarket’s doors.
+                    </p> 
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% block scripts %}
 {{ pagedown.include_pagedown() }}
