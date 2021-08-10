@@ -1,7 +1,7 @@
 /* Body style with backgroud image */
 body{
-    background-image: linear-gradient(rgba(7, 7, 31, 0.473),rgba(7, 7, 31, 0.473)),url(../img/image.jpg);
-    padding-bottom: 10%;
+    margin-bottom: 0;
+    background: #f7f7f7;
     margin-bottom: 0;
 }
 
@@ -10,7 +10,7 @@ body{
     margin-top: 0;
     margin-left: 1%;
     padding-top: 2%;
-    color: #fff;
+    color: black; 
 }
 
 
@@ -19,7 +19,7 @@ h2{
     font-weight: bold;
     margin-top: 6%;
     padding-left: 18%;
-    color: #fff;
+    color: blue; 
 }
 
 
@@ -47,7 +47,7 @@ h2{
 
 /* Bill Name , Amount , Due date and repetion number input fields */
 input[type=text], input[type=number], input[type=date]{
-    width: 35%;
+    width: 65%;
     padding: 8px 18px;
     margin: 0 0;
     display: inline-block;
@@ -63,7 +63,7 @@ input[type=text]:focus, input[type=number]:focus, input[type=date]:focus{
 
 /* Bill Category and Send notification on input fields */
 #Bill-Category, #Notification-Reminder{
-    width: 35%;
+    width: 65%;
     padding: 8px 18px;
     margin: 0 0 0 0;
     display: inline-block;
@@ -80,7 +80,7 @@ input[type=text]:focus, input[type=number]:focus, input[type=date]:focus{
 }
 /* Additional Repetition-Option field for Repeat option */
 #Repetition-Reminder{     
-    width: 35%;
+    width: 65%;
     padding: 8px 18px;
     margin: 1%;
     display: inline-block;
@@ -92,7 +92,7 @@ input[type=text]:focus, input[type=number]:focus, input[type=date]:focus{
 
 /* Note textarea input field */
 #note-field{
-    width: 35%;
+    width: 65%;
     padding: 8px 18px;
     margin: 0 0 0 3px;
     display: inline-block;
@@ -106,12 +106,29 @@ input[type=text]:focus, input[type=number]:focus, input[type=date]:focus{
 .discard-btn{
     padding: 0.5% 4%;
     border-radius: 7px;
-    margin: 2% 0 0 20%;
+    margin: 2% 5% 0 40%;   
+    background: red;
+    color: white;
 }
 .save-btn{
     padding: 0.5% 5%;
     border-radius: 7px;
-    margin: 2% 0 0 1%;
+    margin: 2% 5% 0 1%;    
+    background: blue; 
+}
+
+.image-div{
+    float: right;
+    width: 90%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.home-image{
+    height:100%;
+    border-radius: 5px;
+    object-fit: cover;
+    width:100%;
 }
 
 
@@ -217,5 +234,10 @@ label {
         border-radius: 7px;
         margin: 2% 0 2% 8%;
         font-size: 1rem;
+    }
+    
+    .image-div{
+        width: 100%;
+        margin: 50px 10px;
     }
 }
