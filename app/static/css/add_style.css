@@ -5,6 +5,10 @@ body{
     margin-bottom: 0;
 }
 
+#welcome-section{
+    margin-top: 8%;
+}
+
 /* Form Container */
 .add-item{
     margin-top: 0;
@@ -75,7 +79,7 @@ input[type=text]:focus, input[type=number]:focus, input[type=date]:focus{
 
 /* Repeat and Don't Repeat Radio Buttons */
 .choice-btn{
-    margin: 1% 0 1% 23%;
+    margin: 1% 0 1% 35%;
     font-weight: bold;
 }
 /* Additional Repetition-Option field for Repeat option */
@@ -115,6 +119,7 @@ input[type=text]:focus, input[type=number]:focus, input[type=date]:focus{
     border-radius: 7px;
     margin: 2% 5% 0 1%;    
     background: blue; 
+    color: white;
 }
 
 .image-div{
