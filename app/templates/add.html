@@ -10,7 +10,7 @@
 <section id="welcome-section">
         <div class="container-fluid grey-container" >
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="hero-content" style="width: 90%;margin-left: 5%;"> 
                         <!-- Form heading -->
                         {% if current_user.is_authenticated %}
@@ -120,7 +120,7 @@
                         {% else %}
                         <div class="container col-lg-12 col-md-12 col-sm-12" style="position: absolute;top: 10%;margin-left: 5%;">
                             <center>
-                                <h2 style="padding:0;"><i class="fas fa-lock"></i>Please Login to add Bill Reminders</h2>
+                                <h2 style="padding:0;"><i class="fas fa-lock" style="font-size: 60px;margin-bottom: 15px;"></i> <br> Please Login to add Bill Reminders</h2>
                                 <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
                                 <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
                                     up</a>
