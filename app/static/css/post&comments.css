@@ -12,6 +12,7 @@ body{
     background: white;
     padding: 4%;
     margin-bottom: 4%;
+    border: 2px solid #dedbdb;
 }
 
 h1,h2,h3{
