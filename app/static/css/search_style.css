@@ -46,12 +46,14 @@ body{
 .ques-post{
     padding: 4%;
     background: white;
+    border: 2px solid #dedbdb;
 }
 
 .posts{
     background: white;
     padding: 1% 4%;
     margin-top: 2%;
+    border: 2px solid #dedbdb;
 }
 
 .post-btn{
