@@ -1,4 +1,8 @@
 body{
+    background: #f7f7f7;
+}
+
+.welcome-section{
     background: linear-gradient(rgba(12, 5, 24, 0.438),rgba(12, 5, 24, 0.438)),url('../img/community-pic2.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
