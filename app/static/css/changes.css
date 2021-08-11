@@ -8,12 +8,13 @@ body{
     background: white;
     padding: 3% 0;
     text-align: center;
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 2px 2px 10px #98a1afc7;
     margin-bottom: 4%;
 }
 
 h1,h2{
     font-weight: bold;
+    color: blue;
 }
 
 .change-pass-form, .reset-pass-form, .change-email-form{
