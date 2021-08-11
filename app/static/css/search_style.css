@@ -127,6 +127,35 @@ input[type=text]:focus {
     color: blue;
 }
 
+.footer-nav{
+    list-style-type: none;
+}
+
+li{
+    text-decoration: none;
+}
+
+.site-footer{
+    background: #d2e1f9;
+    padding: 0;
+}
+
+.grid-spacing-sm{
+    /* display: inline-flex; */
+    width: 100%;
+}
+
+.footer-div{
+    margin: 0 40px;
+}
+
+.wrap-size-lg{
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+
 /* Media query (Responsive for phones) */
 @media (max-width: 1100px){
 
@@ -184,5 +213,8 @@ input[type=text]:focus {
     }
     .text-danger{
         font-size: 1.5rem;
+    }
+    .footer-div{
+        margin: 0;
     }
 }
