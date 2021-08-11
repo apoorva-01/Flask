@@ -33,6 +33,16 @@ h6{
     margin: 10px;
     outline: none;
 }
+
+.started-button:active {
+    outline: none;
+    border: none;
+}
+
+.started-button:focus {
+    outline:0;
+}
+
 .started-button:hover{
     color: blue;
     background: white;
@@ -63,6 +73,15 @@ h6{
     padding-right: 35px;
     padding: 12px;
     text-decoration: none;
+}
+
+.guide-button:active {
+    outline: none;
+    border: none;
+}
+
+.guide-button:focus {
+    outline:0;
 }
 
 .image-div{
