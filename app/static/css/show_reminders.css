@@ -27,9 +27,9 @@ body {
 
 /* Tabs */
 .tabs {
-  top: 12%;
-  left: 8%;
-  width: 70%;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 85%;
   padding: 20px 40px;
   border-radius: 50px;
@@ -120,7 +120,7 @@ p {
 
 .image-div{
     float: right;
-    width: 80%;
+    width: 100%;
     margin-left: 50px;
     margin-right: 50px;
 }
