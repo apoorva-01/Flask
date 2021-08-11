@@ -31,6 +31,7 @@ h6{
     padding-right: 35px;
     padding: 12px;
     margin: 10px;
+    outline: none;
 }
 .started-button:hover{
     color: blue;
@@ -51,6 +52,7 @@ h6{
     padding-right: 35px;
     padding: 12px;
     margin: 10px;
+    outline: none;
 }
 .guide-button:hover{
     color: rgb(32 164 115);
