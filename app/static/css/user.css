@@ -26,6 +26,7 @@ table{
 
 .profile-container{
     padding-left: 10%;
+    margin-top: 50px;
 }
 
 .post-btn{
@@ -35,11 +36,13 @@ table{
 @media (min-width: 376px) and (max-width: 425px){
     .profile-container{
         padding-left: 15%;
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 375px){
     .profile-container{
         padding-left: 10%;
+        margin-top: 0;
     }
 }
