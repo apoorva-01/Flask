@@ -103,7 +103,18 @@
         </table>
       </div>
     </div>
+    {% else %}
+      <div class="container show-con">
+        <center>
+          <h2 class="show-unauth">Please log in to see all your Reminders</h2>
+          <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
+          <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
+            up</a>
+        </center>
+      </div>
+      {% endif %}
   </div>
+</div>
 </div>
 <div class="cir1"></div>
 <div class="cir2"></div>
@@ -111,18 +122,6 @@
 <div class="cir4"></div>
 <div class="cir5"></div>
 <div class="cir6"></div>
-
-
-{% else %}
-<div class="container show-con">
-  <center>
-    <h2 class="show-unauth">Please log in to see all your Reminders</h2>
-    <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
-    <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
-      up</a>
-  </center>
-</div>
-{% endif %}
 
 
 <!-- Javascript link -->
