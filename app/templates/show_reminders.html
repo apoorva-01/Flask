@@ -29,9 +29,9 @@
 
     <!-- Tab Header -->
     <div class="tab-header">
-      <div class="active"><i class="fas fa-arrow-circle-up"></i> UPCOMING <a class="badge badge-success" href="">{{total_unpaid}}</a></div>
+      <div class="active"><i class="fas fa-arrow-circle-up"></i> UPCOMING <a class="badge badge-primary" href="">{{total_unpaid}}</a></div>
  
-      <div><i class="fas fa-thumbs-up"></i> PAID <a class="badge badge-success" href="">{{total_paid}}</a></div>
+      <div><i class="fas fa-thumbs-up"></i> PAID <a class="badge badge-primary" href="">{{total_paid}}</a></div>
     </div>
 
     <!-- Tab Indicator -->
@@ -41,8 +41,8 @@
     <div class="tab-body">
       <div class="active" style="width: 100%;">
         <h2>Upcoming Bills</h2>
-        <table class="table table-hover table-light src-table">
-          <thead class="thead-primary">
+        <table class="table table-hover src-table" style="background: blue;">
+          <thead class="thead-primary" style="color: white;">
             <tr>
               <th scope="col">Bill Name</th>
               <th scope="col">Bill Category</th>
@@ -50,7 +50,7 @@
               <th scope="col">Amount</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style="background: white;">
             
             {% for i in entry %}
             {% if i.paidUnpaid=='Unpaid' %}
@@ -76,8 +76,8 @@
 
       <div>
         <h2>Paid Bills</h2>
-        <table class="table table-hover table-light src-table">
-          <thead class="thead-primary">
+        <table class="table table-hover src-table" style="background: blue;">
+          <thead class="thead-primary" style="color: white;">
             <tr>
               <th scope="col">Bill Name</th>
               <th scope="col">Bill Category</th>
@@ -85,7 +85,7 @@
               <th scope="col">Amount</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style="background: white;">
             {% for i in entry %}
             {% if i.paidUnpaid=='Paid' %}
             <tr>
