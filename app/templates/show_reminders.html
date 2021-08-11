@@ -105,8 +105,8 @@
     </div>
     {% else %}
       <div class="container show-con">
-        <center>
-          <h2 class="show-unauth">Please log in to see all your Reminders</h2>
+        <center style="margin-top: 15%;">
+          <h2 class="show-unauth"><i class="fas fa-lock" style="font-size: 60px;margin-bottom: 15px;"></i> <br> Please log in to see all your Reminders</h2>
           <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
           <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
             up</a>
