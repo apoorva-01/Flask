@@ -118,7 +118,7 @@ p {
 }
 .show-con{
   margin-top: 1%;
-  margin-left: 18%;
+  margin-left: 0;
 }
 
 .show-unauth{
@@ -275,7 +275,7 @@ p {
   }
   .show-con{
     margin-top: 15%;
-    margin-left: 18%;
+    margin-left: 10%;
   }
 }
 @media (max-width: 440px){
@@ -284,6 +284,6 @@ p {
   }
   .show-con{
     margin-top: 25%;
-    margin-left: 13%;
+    margin-left: 7%;
   }
 }
