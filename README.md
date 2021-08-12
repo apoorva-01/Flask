@@ -18,7 +18,7 @@ What a user can do:
 
 
 ## Home Page
-![Website Image](app/static/img/readme_pic1.jpg?raw=true "Title")
+![Website Image](app/static/img/g1.png?raw=true "Title")
 
 ## Add Reminder Page
 ![Website Image](app/static/img/readme_pic2.jpg?raw=true "Title")
