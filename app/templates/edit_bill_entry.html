@@ -11,13 +11,14 @@
 
 
 {% import "bootstrap/wtf.html" as wtf %}
-<form class="form form-horizontal" method="post" role="form">
+<form class="form form-horizontal" method="post" role="form" style="text-align: left;">
 {{ wtf.form_field(form.bill_name ) }}
 {{ wtf.form_field(form.amount) }}
 {{ wtf.form_field(form.note) }}
-{{ wtf.form_field(form.submit, class="btn btn-success") }}
-
-{{ wtf.form_field(form.discard, class="btn btn-danger") }}
+<center>
+    {{ wtf.form_field(form.submit, class="btn btn-success") }}
+    {{ wtf.form_field(form.discard, class="btn btn-danger") }}
+</center>
 </form>
 
 </div>
