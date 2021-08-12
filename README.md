@@ -21,23 +21,23 @@ What a user can do:
 ![Website Image](app/static/img/g1.png?raw=true "Title")
 
 ## Add Reminder Page
-![Website Image](app/static/img/readme_pic2.jpg?raw=true "Title")
+![Website Image](app/static/img/g10.png?raw=true "Title")
 
 ## Search Reminder Page
 ![Website Image](app/static/img/readme_pic9.jpg?raw=true "Title")
 
-## Search Page
-![Website Image](app/static/img/readme_pic3.jpg?raw=true "Title")
+## Community Page
+![Website Image](app/static/img/g3.png?raw=true "Title")
 
 
 ## Account Page
 ![Website Image](app/static/img/readme_pic8.jpg?raw=true "Title")
 
 ## Login Page
-![Website Image](app/static/img/readme_pic4.jpg?raw=true "Title")
+![Website Image](app/static/img/g6.png?raw=true "Title")
 
 ## Register Page
-![Website Image](app/static/img/readme_pic7.jpg?raw=true "Title")
+![Website Image](app/static/img/g7.png?raw=true "Title")
 
 ## User Databse
 ![Website Image](app/static/img/readme_pic5.jpg?raw=true "Title")
