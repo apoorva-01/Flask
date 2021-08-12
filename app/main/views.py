@@ -686,3 +686,8 @@ def followed_by(username):
 @main.route("/terms")
 def terms():
     return render_template('terms.html')
+
+# Frequently asked questions Page
+@main.route("/faq")
+def faq():
+    return render_template('faq.html')
