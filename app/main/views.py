@@ -682,3 +682,7 @@ def followed_by(username):
                            endpoint='.followed_by', pagination=pagination,
                            follows=follows)
 
+# Terms and conditions Page
+@main.route("/terms")
+def terms():
+    return render_template('terms.html')
