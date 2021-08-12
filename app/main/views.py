@@ -691,3 +691,8 @@ def terms():
 @main.route("/faq")
 def faq():
     return render_template('faq.html')
+
+# HelpGuide Page
+@main.route("/guide")
+def guide():
+    return render_template('guide.html')
