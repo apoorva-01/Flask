@@ -12,9 +12,9 @@ class Config:
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'tu.hai.demo@gmail.com'
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'merkonhipta'
     BILL_MAIL_SUBJECT_PREFIX = 'Set and Get '
-    BILL_MAIL_SENDER = 'Set & Get  <main.hu.demo@gmail.com>'
+    BILL_MAIL_SENDER = 'Set & Get  <tu.hai.demo@gmail.com>'
 
-    BILL_ADMIN ='main.hu.demo@gmail.com'
+    BILL_ADMIN ='tu.hai.demo@gmail.com'
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     POSTS_PER_PAGE = 9
