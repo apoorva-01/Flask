@@ -9,7 +9,7 @@ class Config:
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
     MAIL_PORT = int(os.environ.get('MAIL_PORT', '465'))
     MAIL_USE_SSL = True
-    MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'main.hu.demo@gmail.com'
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'tu.hai.demo@gmail.com'
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'merkonhipta'
     BILL_MAIL_SUBJECT_PREFIX = 'Set and Get '
     BILL_MAIL_SENDER = 'Set & Get  <main.hu.demo@gmail.com>'
