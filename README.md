@@ -91,7 +91,11 @@ git clone https://github.com/apoorva-01/Bills-Reminder-Using-Flask-and-Celery
 
 * Create a virtual environment(Code is for Windows Only)
 ```
-virtualenv venv 
+python -m virtualenv venv
+```
+* Activate virtual environment(Code is for Windows Only)
+```
+venv\Scripts\activate.bat
 ```
 
 * Download all required modules using
@@ -110,7 +114,14 @@ celery -A app.celery worker -l info -P eventlet
 
 *  Again open command Prompt in the Project Directory and run the app.py file :
 ```
-python app.py
+python bills.py
+```
+
+
+*  Again open command Prompt in the Project Directory and run the app.py file :
+```
+pip install itsdangerous==2.0.1
+pip install mysqlclient
 ```
 
 *  Make a local database of name "bills_app" with 2 tables named "entry" and "user" respectively 
