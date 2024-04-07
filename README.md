@@ -1,4 +1,4 @@
-# Bills-Reminder-App-Using-Flask
+# Bills Reminder Web App Using Flask
 
 It's a web application based on flask framework(including Celery and Redis for background Functions) which 
 helps you in reminding your bill's payment by sending you an email before its due date to avoid extra fee.
@@ -133,3 +133,9 @@ pip install mysqlclient
 
 *  Now Head on to ['http://127.0.0.1:5000/'](http://127.0.0.1:5000/)
 
+## Contact - Apoorva Verma
+
+[Resume Website](https://apoorva.igscs.in/)
+
+[![linkedin](https://img.shields.io/badge/Apoorva_Verma-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/apoorva-verma-aa045a202/)
+[![GitHub](https://img.shields.io/badge/Apoorva_Verma-252525?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/apoorva-01/)
